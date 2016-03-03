@@ -1,6 +1,6 @@
 # Group-Project
 
-**Jitterbugg** is a app to simplify the iPhone user interface by providing an interface that links to apps important to the user as well as providing an easy way to see weather and news data.
+**Pocket Pantry** is a app to simplify the iPhone user interface by providing an interface that links to apps important to the user as well as providing an easy way to see weather and news data.
 
 Time spent: **X** hours spent in total
 
@@ -8,17 +8,18 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] User can select an app shortcut and be taken to that application.
-- [ ] User can customize the layout and shortcuts displayed.
-- [ ] User can view current location weather data provided by the Forecast API.
-- [ ] User can view current news provided by Yahoo! News.
-- [ ] User can select important people to create shortcuts for messaging and/or calling those people.
+- [ ] Import recipe videos from YouTube
+- [ ] User can add ingredients to their “Pantry”
+- [ ] User can delete ingredients from their “Pantry”
+- [ ] Parse recipe description into keywords that match ingredients that the User has added to their “Pantry”
+- [ ] User can favorite videos that are saved to a special tab in the user interface
+- [ ] Option to display all videos or only videos that are avalible based on ingredients in the User’s “Pantry”
 
 The following **optional** features are implemented:
 
-- [ ] User can choose between several different themes.
-- [ ] The same experience will be avalible as a Notification Center Today Widget.
-- [ ] Add the ability to link to 3rd party apps.
+- [ ] Parse the video descriptions to pull out things like ingredients and recipe instructions
+- [ ] Build a grocery list of the ingredients needed to make a recipe
+- [ ] Filter recipes based on catagories/type of cuisine
 
 The following **additional** features are implemented:
 
@@ -36,6 +37,25 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## API
+
+We will be using the [YouTube API](https://developers.google.com/youtube/v3/guides/ios_youtube_helper) to pull in videos.
+
+## Data Model
+
+| YouTubeVideo | |
+| --- | --- |
+| url | `String` |
+| id | `String` |
+| videoDescription | `String` |
+| date | `NSDate` |
+
+| Ingredient | |
+| --- | --- |
+| name | `String` |
+| amount | `CGFloat` |
+
 
 ## Notes
 
