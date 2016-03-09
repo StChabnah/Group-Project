@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5A00CA1447E7F5C81D2B3D /* Pods_Pocket_Pantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */; };
 		D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D161C907B8F00E091D5 /* AppDelegate.swift */; };
-		D8426D191C907B8F00E091D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D181C907B8F00E091D5 /* ViewController.swift */; };
+		D8426D191C907B8F00E091D5 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D181C907B8F00E091D5 /* VideosViewController.swift */; };
 		D8426D1C1C907B8F00E091D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1A1C907B8F00E091D5 /* Main.storyboard */; };
 		D8426D1E1C907B8F00E091D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1D1C907B8F00E091D5 /* Assets.xcassets */; };
 		D8426D211C907B8F00E091D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1F1C907B8F00E091D5 /* LaunchScreen.storyboard */; };
+		D8426D291C9081B800E091D5 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D281C9081B800E091D5 /* PantryViewController.swift */; };
+		D8426D2D1C9085C500E091D5 /* YoutubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */; };
+		D8426D2F1C90948500E091D5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08B02A3BBE106B10E444D1B1 /* Pods-Pocket Pantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket Pantry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry.debug.xcconfig"; sourceTree = "<group>"; };
+		9685A4B2AF447A4415F2578D /* Pods-Pocket Pantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket Pantry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry.release.xcconfig"; sourceTree = "<group>"; };
+		BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Pantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D131C907B8F00E091D5 /* Pocket Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Pantry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D161C907B8F00E091D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8426D181C907B8F00E091D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8426D181C907B8F00E091D5 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		D8426D1B1C907B8F00E091D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8426D1D1C907B8F00E091D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8426D201C907B8F00E091D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8426D221C907B8F00E091D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8426D281C9081B800E091D5 /* PantryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
+		D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeAPI.swift; sourceTree = "<group>"; };
+		D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5A00CA1447E7F5C81D2B3D /* Pods_Pocket_Pantry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BB2EFDF91FD4836E9354DA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8426D0A1C907B8F00E091D5 = {
 			isa = PBXGroup;
 			children = (
 				D8426D151C907B8F00E091D5 /* Pocket Pantry */,
 				D8426D141C907B8F00E091D5 /* Products */,
+				DFE11E4143D56865BFAD3A21 /* Pods */,
+				5BB2EFDF91FD4836E9354DA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,42 @@
 		D8426D151C907B8F00E091D5 /* Pocket Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				D8426D2B1C9085B200E091D5 /* API */,
+				D8426D2A1C90857B00E091D5 /* View Controllers */,
 				D8426D161C907B8F00E091D5 /* AppDelegate.swift */,
-				D8426D181C907B8F00E091D5 /* ViewController.swift */,
 				D8426D1A1C907B8F00E091D5 /* Main.storyboard */,
-				D8426D1D1C907B8F00E091D5 /* Assets.xcassets */,
 				D8426D1F1C907B8F00E091D5 /* LaunchScreen.storyboard */,
+				D8426D1D1C907B8F00E091D5 /* Assets.xcassets */,
 				D8426D221C907B8F00E091D5 /* Info.plist */,
 			);
 			path = "Pocket Pantry";
+			sourceTree = "<group>";
+		};
+		D8426D2A1C90857B00E091D5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D181C907B8F00E091D5 /* VideosViewController.swift */,
+				D8426D281C9081B800E091D5 /* PantryViewController.swift */,
+				D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8426D2B1C9085B200E091D5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		DFE11E4143D56865BFAD3A21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08B02A3BBE106B10E444D1B1 /* Pods-Pocket Pantry.debug.xcconfig */,
+				9685A4B2AF447A4415F2578D /* Pods-Pocket Pantry.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8426D251C907B8F00E091D5 /* Build configuration list for PBXNativeTarget "Pocket Pantry" */;
 			buildPhases = (
+				08F1AB4669AB35F02D258F30 /* Check Pods Manifest.lock */,
 				D8426D0F1C907B8F00E091D5 /* Sources */,
 				D8426D101C907B8F00E091D5 /* Frameworks */,
 				D8426D111C907B8F00E091D5 /* Resources */,
+				8D090E5C218D4F4EC84A327D /* Embed Pods Frameworks */,
+				A4733912480245DC8095532B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +183,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08F1AB4669AB35F02D258F30 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D090E5C218D4F4EC84A327D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4733912480245DC8095532B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8426D0F1C907B8F00E091D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8426D191C907B8F00E091D5 /* ViewController.swift in Sources */,
+				D8426D291C9081B800E091D5 /* PantryViewController.swift in Sources */,
+				D8426D191C907B8F00E091D5 /* VideosViewController.swift in Sources */,
+				D8426D2D1C9085C500E091D5 /* YoutubeAPI.swift in Sources */,
+				D8426D2F1C90948500E091D5 /* FavoritesViewController.swift in Sources */,
 				D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +349,7 @@
 		};
 		D8426D261C907B8F00E091D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08B02A3BBE106B10E444D1B1 /* Pods-Pocket Pantry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pocket Pantry/Info.plist";
@@ -257,6 +361,7 @@
 		};
 		D8426D271C907B8F00E091D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9685A4B2AF447A4415F2578D /* Pods-Pocket Pantry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pocket Pantry/Info.plist";
@@ -285,6 +390,7 @@
 				D8426D271C907B8F00E091D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

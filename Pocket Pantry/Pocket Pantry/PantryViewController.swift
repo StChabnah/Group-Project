@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PantryViewController.swift
 //  Pocket Pantry
 //
 //  Created by Nathan Ansel on 3/9/16.
@@ -8,18 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PantryViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
+  
 }
-
