@@ -1,5 +1,5 @@
 //
-//  YoutubeAPI.swift
+//  Pantry.swift
 //  Pocket Pantry
 //
 //  Created by Nathan Ansel on 3/9/16.
@@ -7,12 +7,9 @@
 //
 
 import Foundation
-import youtube_ios_player_helper
 
-class YoutubeAPI {
+class Pantry {
   
-  static var sharedInstance: YoutubeAPI?
-  
-  
+  var items: [PantryItem]?
   
 }

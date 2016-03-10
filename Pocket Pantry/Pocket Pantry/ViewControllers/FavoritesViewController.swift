@@ -12,9 +12,18 @@ class FavoritesViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
+  var delegate: FavoritesTableViewDelegate!
+  var dataSource: FavoritesTableViewDataSource!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    delegate = FavoritesTableViewDelegate()
+    dataSource = FavoritesTableViewDataSource()
+    
+    tableView.delegate = delegate
+    tableView.dataSource = dataSource
   }
   
 }

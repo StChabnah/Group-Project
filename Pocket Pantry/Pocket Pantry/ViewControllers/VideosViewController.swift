@@ -10,12 +10,16 @@ import UIKit
 
 class VideosViewController: UIViewController {
 
+  // MARK: - Properties
+  // MARK: Outlets
+  
   @IBOutlet weak var tableView: UITableView!
+  
+  // MARK: - Methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
-
 }
 
