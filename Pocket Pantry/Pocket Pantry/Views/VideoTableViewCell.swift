@@ -9,9 +9,12 @@
 import UIKit
 
 class VideoTableViewCell: UITableViewCell {
+  @IBOutlet var videoImageView: UIImageView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    
+    videoImageView.image = UIImage(imageLiteral: "sexy")
   }
   
   override func prepareForReuse() {

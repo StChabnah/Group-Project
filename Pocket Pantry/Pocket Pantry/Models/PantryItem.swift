@@ -11,11 +11,9 @@ import Foundation
 class PantryItem {
   
   var name: String?
-  var number: Int?
   
   convenience init(name: String?, number: Int?) {
     self.init()
     self.name = name
-    self.number = number
   }
 }

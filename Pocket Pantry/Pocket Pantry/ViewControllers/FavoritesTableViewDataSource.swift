@@ -25,18 +25,4 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return data?.count ?? 0
   }
-  
-  // TODO: Implement editing the amount of information held in the
-  
-//  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//    return true
-//  }
-//  
-//  func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//    return true
-//  }
-//  
-//  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//    <#code#>
-//  }
 }
