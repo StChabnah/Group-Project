@@ -17,14 +17,17 @@ class YoutubeAPI {
   static var sharedInstance: YoutubeAPI = YoutubeAPI()
   
   internal var videos: [Video]?
+  internal var apikey = "AIzaSyAP9jsq8LPcLSILNPblTjLi1mNcN5vkAWA"
+  internal var username = "Tasty"
   
   // MARK: - Methods
   
-  init() {
+//  init() {
     // TODO: Grab the videos from YouTube
-  }
+//  }
   
   class func refreshVideoIDs() {
+    let query = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=\(sharedInstance.username)&key={\(sharedInstance.apikey)}"
     
   }
   

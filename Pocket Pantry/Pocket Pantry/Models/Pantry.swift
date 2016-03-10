@@ -10,6 +10,10 @@ import Foundation
 
 class Pantry {
   
-  var items: [PantryItem]?
+  internal var items: [PantryItem]?
+  
+  init() {
+    items = [PantryItem]()
+  }
   
 }
