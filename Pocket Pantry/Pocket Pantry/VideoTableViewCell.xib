@@ -21,6 +21,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Amf-LL-MRY" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="ImV-TJ-3s4"/>
                     <constraint firstItem="Amf-LL-MRY" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="NYE-Ph-ukL"/>

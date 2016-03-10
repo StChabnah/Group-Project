@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GradientView
 
 class VideosTableViewDataSource: NSObject, UITableViewDataSource {
 
@@ -19,6 +20,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell")
     // TODO: set up the cell
+    
     return cell!
   }
   

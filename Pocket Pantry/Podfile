@@ -6,4 +6,5 @@ use_frameworks!
 target 'Pocket Pantry' do
   pod 'youtube-ios-player-helper'
   pod 'AFNetworking'
+  pod 'GradientView'
 end

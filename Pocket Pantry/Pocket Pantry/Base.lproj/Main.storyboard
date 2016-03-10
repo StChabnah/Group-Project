@@ -18,17 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JRe-wp-mkm">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JRe-wp-mkm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8fK-il-w4a"/>
+                            <constraint firstAttribute="trailing" secondItem="JRe-wp-mkm" secondAttribute="trailing" id="Dxl-VC-jQe"/>
+                            <constraint firstItem="JRe-wp-mkm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IGH-Ne-eXd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JRe-wp-mkm" secondAttribute="bottom" id="Lcq-Kt-tiK"/>
+                            <constraint firstAttribute="trailing" secondItem="JRe-wp-mkm" secondAttribute="trailing" id="MAY-W3-9Ja"/>
+                            <constraint firstAttribute="bottom" secondItem="JRe-wp-mkm" secondAttribute="bottom" id="bfC-R5-1rS"/>
                             <constraint firstItem="JRe-wp-mkm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d42-yi-Pm2"/>
+                            <constraint firstItem="JRe-wp-mkm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eYp-QZ-lDe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JRe-wp-mkm" secondAttribute="bottom" id="gIU-PH-H1g"/>
                             <constraint firstAttribute="trailing" secondItem="JRe-wp-mkm" secondAttribute="trailing" id="tBv-NR-SwQ"/>
                             <constraint firstItem="JRe-wp-mkm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tRw-Y2-ZLT"/>
+                            <constraint firstItem="JRe-wp-mkm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zNz-T9-SWX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MAY-W3-9Ja"/>
+                                <exclude reference="d42-yi-Pm2"/>
+                                <exclude reference="eYp-QZ-lDe"/>
+                                <exclude reference="tBv-NR-SwQ"/>
+                                <exclude reference="tRw-Y2-ZLT"/>
+                                <exclude reference="zNz-T9-SWX"/>
+                                <exclude reference="Lcq-Kt-tiK"/>
+                                <exclude reference="gIU-PH-H1g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Videos" id="uvw-Gr-4dV"/>
                     <connections>
