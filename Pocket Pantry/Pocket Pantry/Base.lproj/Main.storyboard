@@ -154,22 +154,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l75-YE-vNW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l75-YE-vNW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xRv-hW-yz3" firstAttribute="top" secondItem="l75-YE-vNW" secondAttribute="bottom" id="1Qr-tq-XtE"/>
+                            <constraint firstAttribute="trailing" secondItem="l75-YE-vNW" secondAttribute="trailing" id="1nE-jj-azt"/>
+                            <constraint firstAttribute="bottom" secondItem="l75-YE-vNW" secondAttribute="bottom" id="CYZ-8M-IQa"/>
                             <constraint firstItem="l75-YE-vNW" firstAttribute="leading" secondItem="8AT-lg-Uzx" secondAttribute="leading" id="ISB-J7-EBk"/>
                             <constraint firstItem="l75-YE-vNW" firstAttribute="top" secondItem="8AT-lg-Uzx" secondAttribute="top" id="XEc-kB-d4g"/>
                             <constraint firstAttribute="bottom" secondItem="l75-YE-vNW" secondAttribute="bottom" id="ocD-8i-Owd"/>
                             <constraint firstAttribute="trailing" secondItem="l75-YE-vNW" secondAttribute="trailing" id="oqc-3L-asE"/>
+                            <constraint firstItem="l75-YE-vNW" firstAttribute="top" secondItem="8AT-lg-Uzx" secondAttribute="top" id="s65-kg-ewq"/>
+                            <constraint firstItem="l75-YE-vNW" firstAttribute="leading" secondItem="8AT-lg-Uzx" secondAttribute="leading" id="wIj-AB-Q8B"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ISB-J7-EBk"/>
+                                <exclude reference="XEc-kB-d4g"/>
                                 <exclude reference="ocD-8i-Owd"/>
+                                <exclude reference="oqc-3L-asE"/>
+                                <exclude reference="1Qr-tq-XtE"/>
                             </mask>
                         </variation>
                     </view>

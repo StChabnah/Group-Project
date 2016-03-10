@@ -23,6 +23,6 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data?.count ?? 0
+    return 20//data?.count ?? 0
   }
 }
