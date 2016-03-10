@@ -125,9 +125,9 @@
 		D8426D331C90A95D00E091D5 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */,
 				D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */,
 				D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */,
-				D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */,
 			);
 			name = Videos;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 		D8426D341C90A96800E091D5 /* Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				D8426D571C90B0ED00E091D5 /* PantryViewController.swift */,
 				D8426D551C90B0ED00E091D5 /* PantryTableViewDataSource.swift */,
 				D8426D561C90B0ED00E091D5 /* PantryTableViewDelegate.swift */,
-				D8426D571C90B0ED00E091D5 /* PantryViewController.swift */,
 			);
 			name = Pantry;
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 		D8426D351C90A96F00E091D5 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				D8426D541C90B0ED00E091D5 /* FavoritesViewController.swift */,
 				D8426D521C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift */,
 				D8426D531C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift */,
-				D8426D541C90B0ED00E091D5 /* FavoritesViewController.swift */,
 			);
 			name = Favorites;
 			sourceTree = "<group>";
