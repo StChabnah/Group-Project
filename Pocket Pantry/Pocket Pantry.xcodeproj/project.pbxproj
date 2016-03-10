@@ -9,13 +9,24 @@
 /* Begin PBXBuildFile section */
 		5F5A00CA1447E7F5C81D2B3D /* Pods_Pocket_Pantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */; };
 		D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D161C907B8F00E091D5 /* AppDelegate.swift */; };
-		D8426D191C907B8F00E091D5 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D181C907B8F00E091D5 /* VideosViewController.swift */; };
 		D8426D1C1C907B8F00E091D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1A1C907B8F00E091D5 /* Main.storyboard */; };
 		D8426D1E1C907B8F00E091D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1D1C907B8F00E091D5 /* Assets.xcassets */; };
 		D8426D211C907B8F00E091D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1F1C907B8F00E091D5 /* LaunchScreen.storyboard */; };
-		D8426D291C9081B800E091D5 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D281C9081B800E091D5 /* PantryViewController.swift */; };
-		D8426D2D1C9085C500E091D5 /* YoutubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */; };
-		D8426D2F1C90948500E091D5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */; };
+		D8426D481C90B05900E091D5 /* PantryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D471C90B05900E091D5 /* PantryTableViewCell.swift */; };
+		D8426D4A1C90B08400E091D5 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D491C90B08400E091D5 /* VideoTableViewCell.swift */; };
+		D8426D5E1C90B0ED00E091D5 /* YoutubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D4C1C90B0ED00E091D5 /* YoutubeAPI.swift */; };
+		D8426D5F1C90B0ED00E091D5 /* Pantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D4E1C90B0ED00E091D5 /* Pantry.swift */; };
+		D8426D601C90B0ED00E091D5 /* PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D4F1C90B0ED00E091D5 /* PantryItem.swift */; };
+		D8426D611C90B0ED00E091D5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D501C90B0ED00E091D5 /* Video.swift */; };
+		D8426D621C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D521C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift */; };
+		D8426D631C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D531C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift */; };
+		D8426D641C90B0ED00E091D5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D541C90B0ED00E091D5 /* FavoritesViewController.swift */; };
+		D8426D651C90B0ED00E091D5 /* PantryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D551C90B0ED00E091D5 /* PantryTableViewDataSource.swift */; };
+		D8426D661C90B0ED00E091D5 /* PantryTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D561C90B0ED00E091D5 /* PantryTableViewDelegate.swift */; };
+		D8426D671C90B0ED00E091D5 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D571C90B0ED00E091D5 /* PantryViewController.swift */; };
+		D8426D681C90B0ED00E091D5 /* VideosTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */; };
+		D8426D691C90B0ED00E091D5 /* VideosTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */; };
+		D8426D6A1C90B0ED00E091D5 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,14 +35,25 @@
 		BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Pantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D131C907B8F00E091D5 /* Pocket Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Pantry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D161C907B8F00E091D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8426D181C907B8F00E091D5 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		D8426D1B1C907B8F00E091D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8426D1D1C907B8F00E091D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8426D201C907B8F00E091D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8426D221C907B8F00E091D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8426D281C9081B800E091D5 /* PantryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
-		D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeAPI.swift; sourceTree = "<group>"; };
-		D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		D8426D471C90B05900E091D5 /* PantryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PantryTableViewCell.swift; path = Views/PantryTableViewCell.swift; sourceTree = "<group>"; };
+		D8426D491C90B08400E091D5 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoTableViewCell.swift; path = Views/VideoTableViewCell.swift; sourceTree = "<group>"; };
+		D8426D4C1C90B0ED00E091D5 /* YoutubeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeAPI.swift; sourceTree = "<group>"; };
+		D8426D4E1C90B0ED00E091D5 /* Pantry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pantry.swift; sourceTree = "<group>"; };
+		D8426D4F1C90B0ED00E091D5 /* PantryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryItem.swift; sourceTree = "<group>"; };
+		D8426D501C90B0ED00E091D5 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		D8426D521C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesTableViewDataSource.swift; path = ViewControllers/FavoritesTableViewDataSource.swift; sourceTree = "<group>"; };
+		D8426D531C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesTableViewDelegate.swift; path = ViewControllers/FavoritesTableViewDelegate.swift; sourceTree = "<group>"; };
+		D8426D541C90B0ED00E091D5 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = ViewControllers/FavoritesViewController.swift; sourceTree = "<group>"; };
+		D8426D551C90B0ED00E091D5 /* PantryTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PantryTableViewDataSource.swift; path = ViewControllers/PantryTableViewDataSource.swift; sourceTree = "<group>"; };
+		D8426D561C90B0ED00E091D5 /* PantryTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PantryTableViewDelegate.swift; path = ViewControllers/PantryTableViewDelegate.swift; sourceTree = "<group>"; };
+		D8426D571C90B0ED00E091D5 /* PantryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PantryViewController.swift; path = ViewControllers/PantryViewController.swift; sourceTree = "<group>"; };
+		D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosTableViewDataSource.swift; path = ViewControllers/VideosTableViewDataSource.swift; sourceTree = "<group>"; };
+		D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosTableViewDelegate.swift; path = ViewControllers/VideosTableViewDelegate.swift; sourceTree = "<group>"; };
+		D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosViewController.swift; path = ViewControllers/VideosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +97,9 @@
 		D8426D151C907B8F00E091D5 /* Pocket Pantry */ = {
 			isa = PBXGroup;
 			children = (
-				D8426D2B1C9085B200E091D5 /* API */,
+				D8426D4B1C90B0ED00E091D5 /* API */,
+				D8426D4D1C90B0ED00E091D5 /* Models */,
+				D8426D461C90B02B00E091D5 /* Views */,
 				D8426D2A1C90857B00E091D5 /* View Controllers */,
 				D8426D161C907B8F00E091D5 /* AppDelegate.swift */,
 				D8426D1A1C907B8F00E091D5 /* Main.storyboard */,
@@ -89,19 +113,68 @@
 		D8426D2A1C90857B00E091D5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D8426D181C907B8F00E091D5 /* VideosViewController.swift */,
-				D8426D281C9081B800E091D5 /* PantryViewController.swift */,
-				D8426D2E1C90948500E091D5 /* FavoritesViewController.swift */,
+				D8426D331C90A95D00E091D5 /* Videos */,
+				D8426D341C90A96800E091D5 /* Pantry */,
+				D8426D351C90A96F00E091D5 /* Favorites */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		D8426D2B1C9085B200E091D5 /* API */ = {
+		D8426D331C90A95D00E091D5 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				D8426D2C1C9085C500E091D5 /* YoutubeAPI.swift */,
+				D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */,
+				D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */,
+				D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */,
 			);
-			name = API;
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		D8426D341C90A96800E091D5 /* Pantry */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D551C90B0ED00E091D5 /* PantryTableViewDataSource.swift */,
+				D8426D561C90B0ED00E091D5 /* PantryTableViewDelegate.swift */,
+				D8426D571C90B0ED00E091D5 /* PantryViewController.swift */,
+			);
+			name = Pantry;
+			sourceTree = "<group>";
+		};
+		D8426D351C90A96F00E091D5 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D521C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift */,
+				D8426D531C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift */,
+				D8426D541C90B0ED00E091D5 /* FavoritesViewController.swift */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		D8426D461C90B02B00E091D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D471C90B05900E091D5 /* PantryTableViewCell.swift */,
+				D8426D491C90B08400E091D5 /* VideoTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D8426D4B1C90B0ED00E091D5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D4C1C90B0ED00E091D5 /* YoutubeAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D8426D4D1C90B0ED00E091D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8426D4E1C90B0ED00E091D5 /* Pantry.swift */,
+				D8426D4F1C90B0ED00E091D5 /* PantryItem.swift */,
+				D8426D501C90B0ED00E091D5 /* Video.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DFE11E4143D56865BFAD3A21 /* Pods */ = {
@@ -126,6 +199,7 @@
 				D8426D111C907B8F00E091D5 /* Resources */,
 				8D090E5C218D4F4EC84A327D /* Embed Pods Frameworks */,
 				A4733912480245DC8095532B /* Copy Pods Resources */,
+				D8426D6D1C90B24D00E091D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -229,6 +303,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D8426D6D1C90B24D00E091D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -236,11 +323,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8426D291C9081B800E091D5 /* PantryViewController.swift in Sources */,
-				D8426D191C907B8F00E091D5 /* VideosViewController.swift in Sources */,
-				D8426D2D1C9085C500E091D5 /* YoutubeAPI.swift in Sources */,
-				D8426D2F1C90948500E091D5 /* FavoritesViewController.swift in Sources */,
+				D8426D671C90B0ED00E091D5 /* PantryViewController.swift in Sources */,
+				D8426D631C90B0ED00E091D5 /* FavoritesTableViewDelegate.swift in Sources */,
+				D8426D5F1C90B0ED00E091D5 /* Pantry.swift in Sources */,
+				D8426D621C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift in Sources */,
+				D8426D5E1C90B0ED00E091D5 /* YoutubeAPI.swift in Sources */,
+				D8426D601C90B0ED00E091D5 /* PantryItem.swift in Sources */,
+				D8426D481C90B05900E091D5 /* PantryTableViewCell.swift in Sources */,
+				D8426D661C90B0ED00E091D5 /* PantryTableViewDelegate.swift in Sources */,
+				D8426D611C90B0ED00E091D5 /* Video.swift in Sources */,
+				D8426D681C90B0ED00E091D5 /* VideosTableViewDataSource.swift in Sources */,
+				D8426D691C90B0ED00E091D5 /* VideosTableViewDelegate.swift in Sources */,
 				D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */,
+				D8426D6A1C90B0ED00E091D5 /* VideosViewController.swift in Sources */,
+				D8426D4A1C90B08400E091D5 /* VideoTableViewCell.swift in Sources */,
+				D8426D641C90B0ED00E091D5 /* FavoritesViewController.swift in Sources */,
+				D8426D651C90B0ED00E091D5 /* PantryTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
