@@ -11,6 +11,8 @@ import GradientView
 
 class VideoTableViewCell: UITableViewCell {
   @IBOutlet var videoImageView: UIImageView!
+  @IBOutlet var recipeNameLabel: UILabel!
+  @IBOutlet var gradientViewContainer: UIView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -22,7 +24,7 @@ class VideoTableViewCell: UITableViewCell {
     gradientView.locations = [0.0, 0.7]
     gradientView.direction = .Horizontal
     gradientView.backgroundColor = UIColor.clearColor()
-    addSubview(gradientView)
+    gradientViewContainer.addSubview(gradientView)
   }
   
   override func prepareForReuse() {

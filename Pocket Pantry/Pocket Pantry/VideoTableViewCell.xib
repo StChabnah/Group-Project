@@ -20,19 +20,36 @@
                             <constraint firstAttribute="height" constant="128" id="pLd-Cn-lfA"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mb-CA-3GT">
+                        <rect key="frame" x="0.0" y="0.5" width="487" height="127.5"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-hX-RLZ">
+                        <rect key="frame" x="8" y="8" width="151" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="Hdr-6R-SaG"/>
                     <constraint firstItem="Amf-LL-MRY" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="ImV-TJ-3s4"/>
                     <constraint firstItem="Amf-LL-MRY" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="NYE-Ph-ukL"/>
+                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" constant="8" id="Ph0-T7-g5S"/>
+                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="cwn-2Z-66k"/>
+                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" constant="8" id="nkP-LV-U1O"/>
                     <constraint firstAttribute="bottom" secondItem="Amf-LL-MRY" secondAttribute="bottom" id="qWp-iW-bPf"/>
+                    <constraint firstAttribute="trailing" secondItem="8Mb-CA-3GT" secondAttribute="trailing" id="qmI-VC-CMa"/>
                     <constraint firstAttribute="trailing" secondItem="Amf-LL-MRY" secondAttribute="trailing" id="vBS-as-re2"/>
+                    <constraint firstAttribute="bottom" secondItem="8Mb-CA-3GT" secondAttribute="bottom" id="zKp-FX-rk5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="gradientViewContainer" destination="8Mb-CA-3GT" id="dUf-zY-mRr"/>
+                <outlet property="recipeNameLabel" destination="c3x-hX-RLZ" id="ELo-80-C0c"/>
                 <outlet property="videoImageView" destination="Amf-LL-MRY" id="f92-ia-a8t"/>
             </connections>
-            <point key="canvasLocation" x="587.5" y="413.5"/>
+            <point key="canvasLocation" x="587.5" y="413"/>
         </tableViewCell>
     </objects>
 </document>
