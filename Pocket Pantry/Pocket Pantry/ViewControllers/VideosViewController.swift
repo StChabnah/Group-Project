@@ -15,11 +15,20 @@ class VideosViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
+  var delegate: VideosTableViewDelegate!
+  var dataSource: VideosTableViewDataSource!
+  
   // MARK: - Methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    delegate = VideosTableViewDelegate()
+    dataSource = VideosTableViewDataSource()
+    
+    tableView.delegate = delegate
+    tableView.dataSource = dataSource
   }
 }
 

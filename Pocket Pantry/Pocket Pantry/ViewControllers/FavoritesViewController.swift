@@ -10,10 +10,14 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
 
+  // MARK: - Properties
+  
   @IBOutlet weak var tableView: UITableView!
   
   var delegate: FavoritesTableViewDelegate!
   var dataSource: FavoritesTableViewDataSource!
+  
+  // MARK: - Methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
