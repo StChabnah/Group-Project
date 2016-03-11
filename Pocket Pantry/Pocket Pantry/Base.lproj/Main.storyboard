@@ -182,7 +182,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="MNO-NG-dR9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2VR-WU-FA4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2VR-WU-FA4">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="9Rc-iw-Kc2" id="HCM-o2-VNI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="l75-YE-vNW" id="DlT-vV-NOi"/>

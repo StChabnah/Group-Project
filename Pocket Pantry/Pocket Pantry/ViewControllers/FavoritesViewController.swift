@@ -31,4 +31,7 @@ class FavoritesViewController: UIViewController {
     tableView.dataSource = dataSource
   }
   
+  @IBAction func editButtonPressed(sender: UIBarButtonItem) {
+    // TODO:
+  }
 }
