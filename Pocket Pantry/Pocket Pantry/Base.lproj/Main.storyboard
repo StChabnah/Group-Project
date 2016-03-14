@@ -132,7 +132,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pantry" id="ooC-tO-8wR">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="qp6-fW-HQd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZTg-0X-J6S"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZTg-0X-J6S">
+                            <connections>
+                                <segue destination="i0z-sx-A65" kind="show" id="BUL-qI-oqb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qqE-fU-fCZ" id="N5n-hg-AnC"/>
@@ -182,13 +186,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="MNO-NG-dR9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2VR-WU-FA4">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="2VR-WU-FA4">
                             <connections>
                                 <action selector="editButtonPressed:" destination="9Rc-iw-Kc2" id="HCM-o2-VNI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="2VR-WU-FA4" id="hiR-Uu-Bti"/>
                         <outlet property="tableView" destination="l75-YE-vNW" id="DlT-vV-NOi"/>
                     </connections>
                 </viewController>

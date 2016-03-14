@@ -18,6 +18,8 @@ class VideoTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
+    videoImageView.clipsToBounds = true
+    
     videoImageView.image = UIImage(imageLiteral: "sexy")
     
     recipeDescriptionLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

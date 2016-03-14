@@ -9,6 +9,7 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+  @IBOutlet var editButton: UIBarButtonItem!
 
   // MARK: - Properties
   
@@ -32,6 +33,13 @@ class FavoritesViewController: UIViewController {
   }
   
   @IBAction func editButtonPressed(sender: UIBarButtonItem) {
-    // TODO:
+    if(tableView.editing == true) {
+      tableView.editing = false
+      sender.title = "Edit"
+    }
+    else {
+      tableView.editing = true
+      sender.title = "Done"
+    }
   }
 }

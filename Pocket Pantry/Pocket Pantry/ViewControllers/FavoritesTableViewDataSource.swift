@@ -25,4 +25,11 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 20//data?.count ?? 0
   }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+      data?.removeAtIndex(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+    }
+  }
 }
