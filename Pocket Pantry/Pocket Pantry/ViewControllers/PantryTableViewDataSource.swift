@@ -19,18 +19,20 @@ class PantryTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("PantryTableViewCell")
-    // TODO: set up the cell
-    
-        cell?.textLabel!.text = pantry[indexPath.row]
-    
-    
-    return cell!
-    
-  }
+    cell?.textLabel!.text = pantry[indexPath.row]
   
-    
+    return cell!
+  }
+
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return pantry.count ?? 0
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+      pantry.removeAtIndex(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+    }
   }
   
 }

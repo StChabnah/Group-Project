@@ -19,11 +19,10 @@ class PantryViewController: UIViewController {
   
   // MARK: - Methods
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
-        self.tableView.reloadData()
-        
-    }
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated);
+    self.tableView.reloadData()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,8 +34,10 @@ class PantryViewController: UIViewController {
     
     tableView.delegate = delegate
     tableView.dataSource = dataSource
-    
-    
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let vc = segue.destinationViewController as! NewPantryItemViewController
+    vc.pantryTableView = self
+  }
 }

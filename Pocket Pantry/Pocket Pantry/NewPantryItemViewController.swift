@@ -9,17 +9,14 @@
 import UIKit
 
 class NewPantryItemViewController: UIViewController {
-    var dataSource: PantryTableViewDataSource!
-    
-
+    var pantryTableView: PantryViewController!
+  
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        dataSource = PantryTableViewDataSource()
-        
+        super.viewDidLoad()        
         // Do any additional setup after loading the view.
     }
 
@@ -30,10 +27,10 @@ class NewPantryItemViewController: UIViewController {
     
     
     @IBAction func navPop(sender: AnyObject) {
-        dataSource.pantry.append(textField.text!)
-        print(dataSource.pantry[0])
-        
-        navigationController?.popViewControllerAnimated(true)
+      if textField.text != "" {
+        pantryTableView.dataSource.pantry.append(textField.text!)
+      }
+      navigationController?.popViewControllerAnimated(true)
     }
     
   
