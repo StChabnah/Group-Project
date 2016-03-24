@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E0802281C9108DA00DF347A /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0802271C9108DA00DF347A /* VideoTableViewCell.xib */; };
 		5F5A00CA1447E7F5C81D2B3D /* Pods_Pocket_Pantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */; };
+		A4ACDF1A1CA36813008FF447 /* NewPantryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ACDF191CA36813008FF447 /* NewPantryItemViewController.swift */; };
 		D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D161C907B8F00E091D5 /* AppDelegate.swift */; };
 		D8426D1C1C907B8F00E091D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1A1C907B8F00E091D5 /* Main.storyboard */; };
 		D8426D1E1C907B8F00E091D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1D1C907B8F00E091D5 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		08B02A3BBE106B10E444D1B1 /* Pods-Pocket Pantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket Pantry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0802271C9108DA00DF347A /* VideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		9685A4B2AF447A4415F2578D /* Pods-Pocket Pantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket Pantry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry.release.xcconfig"; sourceTree = "<group>"; };
+		A4ACDF191CA36813008FF447 /* NewPantryItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPantryItemViewController.swift; sourceTree = "<group>"; };
 		BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Pantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D131C907B8F00E091D5 /* Pocket Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Pantry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D161C907B8F00E091D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				D8426D571C90B0ED00E091D5 /* PantryViewController.swift */,
 				D8426D551C90B0ED00E091D5 /* PantryTableViewDataSource.swift */,
 				D8426D561C90B0ED00E091D5 /* PantryTableViewDelegate.swift */,
+				A4ACDF191CA36813008FF447 /* NewPantryItemViewController.swift */,
 			);
 			name = Pantry;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D8426D481C90B05900E091D5 /* PantryTableViewCell.swift in Sources */,
 				D8426D661C90B0ED00E091D5 /* PantryTableViewDelegate.swift in Sources */,
 				D8426D611C90B0ED00E091D5 /* Video.swift in Sources */,
+				A4ACDF1A1CA36813008FF447 /* NewPantryItemViewController.swift in Sources */,
 				D8426D681C90B0ED00E091D5 /* VideosTableViewDataSource.swift in Sources */,
 				D8426D691C90B0ED00E091D5 /* VideosTableViewDelegate.swift in Sources */,
 				D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */,

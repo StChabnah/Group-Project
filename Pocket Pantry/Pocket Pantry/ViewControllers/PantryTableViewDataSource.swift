@@ -12,18 +12,25 @@ class PantryTableViewDataSource: NSObject, UITableViewDataSource {
   
   // MARK: - Properties
   
-  var pantry: Pantry?
+    var pantry = [String]()
+    
   
   // MARK: - Methods
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("PantryTableViewCell")
     // TODO: set up the cell
+    
+        cell?.textLabel!.text = pantry[indexPath.row]
+    
+    
     return cell!
+    
   }
   
+    
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return pantry?.items?.count ?? 0
+    return pantry.count ?? 0
   }
   
 }

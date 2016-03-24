@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zk1-gz-g2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zk1-gz-g2u">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Videos-->
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="2810" y="241"/>
         </scene>
-        <!--View Controller-->
+        <!--New Pantry Item View Controller-->
         <scene sceneID="IV4-V7-03B">
             <objects>
-                <viewController id="i0z-sx-A65" sceneMemberID="viewController">
+                <viewController id="i0z-sx-A65" customClass="NewPantryItemViewController" customModule="Pocket_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xda-dU-qBQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Ybj-hI-q8G"/>
@@ -88,12 +88,37 @@
                     <view key="view" contentMode="scaleToFill" id="oBk-m7-FTa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1T5-32-qpz">
+                                <rect key="frame" x="36" y="88" width="529" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1T5-32-qpz" firstAttribute="top" secondItem="Xda-dU-qBQ" secondAttribute="bottom" constant="24" id="6LM-bZ-PPo"/>
+                            <constraint firstItem="1T5-32-qpz" firstAttribute="leading" secondItem="oBk-m7-FTa" secondAttribute="leading" constant="36" id="n8g-IW-Dmh"/>
+                            <constraint firstAttribute="trailing" secondItem="1T5-32-qpz" secondAttribute="trailing" constant="35" id="wq8-eq-Ky2"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Yjw-FJ-YuY">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="cmF-VS-GZ3">
+                            <connections>
+                                <action selector="navPop:" destination="i0z-sx-A65" id="fxm-Ah-OTf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="saveButton" destination="cmF-VS-GZ3" id="LQ8-Kt-5yq"/>
+                        <outlet property="textField" destination="1T5-32-qpz" id="BrM-ML-6Hr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVJ-uY-VIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="965"/>
+            <point key="canvasLocation" x="2792" y="975"/>
         </scene>
         <!--Pantry-->
         <scene sceneID="dIK-aH-Meo">
@@ -115,7 +140,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUo-0M-C6b" id="4h8-9e-qUS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -134,7 +159,7 @@
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="qp6-fW-HQd"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZTg-0X-J6S">
                             <connections>
-                                <segue destination="i0z-sx-A65" kind="show" id="BUL-qI-oqb"/>
+                                <segue destination="i0z-sx-A65" kind="show" id="7rh-7d-y5I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

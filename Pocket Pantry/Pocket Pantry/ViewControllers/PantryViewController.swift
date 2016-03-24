@@ -18,9 +18,16 @@ class PantryViewController: UIViewController {
   var dataSource: PantryTableViewDataSource!
   
   // MARK: - Methods
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.tableView.reloadData()
+        
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.tableView.reloadData()
     // Do any additional setup after loading the view, typically from a nib.
     
     delegate = PantryTableViewDelegate()
@@ -28,6 +35,8 @@ class PantryViewController: UIViewController {
     
     tableView.delegate = delegate
     tableView.dataSource = dataSource
+    
+    
   }
   
 }
