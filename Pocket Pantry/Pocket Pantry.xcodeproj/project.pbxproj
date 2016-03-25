@@ -29,6 +29,7 @@
 		D8426D681C90B0ED00E091D5 /* VideosTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */; };
 		D8426D691C90B0ED00E091D5 /* VideosTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */; };
 		D8426D6A1C90B0ED00E091D5 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */; };
+		D8E14C4A1CA581C5009FF145 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E14C491CA581C5009FF145 /* Playlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		D8426D581C90B0ED00E091D5 /* VideosTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosTableViewDataSource.swift; path = ViewControllers/VideosTableViewDataSource.swift; sourceTree = "<group>"; };
 		D8426D591C90B0ED00E091D5 /* VideosTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosTableViewDelegate.swift; path = ViewControllers/VideosTableViewDelegate.swift; sourceTree = "<group>"; };
 		D8426D5A1C90B0ED00E091D5 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosViewController.swift; path = ViewControllers/VideosViewController.swift; sourceTree = "<group>"; };
+		D8E14C491CA581C5009FF145 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				D8426D4E1C90B0ED00E091D5 /* Pantry.swift */,
 				D8426D4F1C90B0ED00E091D5 /* PantryItem.swift */,
 				D8426D501C90B0ED00E091D5 /* Video.swift */,
+				D8E14C491CA581C5009FF145 /* Playlist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D8426D611C90B0ED00E091D5 /* Video.swift in Sources */,
 				A4ACDF1A1CA36813008FF447 /* NewPantryItemViewController.swift in Sources */,
 				D8426D681C90B0ED00E091D5 /* VideosTableViewDataSource.swift in Sources */,
+				D8E14C4A1CA581C5009FF145 /* Playlist.swift in Sources */,
 				D8426D691C90B0ED00E091D5 /* VideosTableViewDelegate.swift in Sources */,
 				D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */,
 				D8426D6A1C90B0ED00E091D5 /* VideosViewController.swift in Sources */,

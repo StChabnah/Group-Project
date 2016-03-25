@@ -85,11 +85,17 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Pocket Pantry/AFNetworking.framework"
+  install_framework "Pods-Pocket Pantry/Alamofire.framework"
   install_framework "Pods-Pocket Pantry/GradientView.framework"
+  install_framework "Pods-Pocket Pantry/Realm.framework"
+  install_framework "Pods-Pocket Pantry/RealmSwift.framework"
   install_framework "Pods-Pocket Pantry/youtube_ios_player_helper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Pocket Pantry/AFNetworking.framework"
+  install_framework "Pods-Pocket Pantry/Alamofire.framework"
   install_framework "Pods-Pocket Pantry/GradientView.framework"
+  install_framework "Pods-Pocket Pantry/Realm.framework"
+  install_framework "Pods-Pocket Pantry/RealmSwift.framework"
   install_framework "Pods-Pocket Pantry/youtube_ios_player_helper.framework"
 fi

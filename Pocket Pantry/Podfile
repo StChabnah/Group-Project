@@ -7,4 +7,6 @@ target 'Pocket Pantry' do
   pod 'youtube-ios-player-helper'
   pod 'AFNetworking'
   pod 'GradientView'
+  pod 'Alamofire'
+  pod 'RealmSwift'
 end
