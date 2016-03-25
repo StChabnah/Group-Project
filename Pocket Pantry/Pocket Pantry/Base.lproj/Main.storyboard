@@ -20,6 +20,25 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JRe-wp-mkm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search for recipes" id="hfb-RW-Ve7">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5YQ-Jz-Xk0">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5YQ-Jz-Xk0" id="pIg-FO-XEY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -52,17 +71,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Videos" id="uvw-Gr-4dV"/>
                     <connections>
+                        <outlet property="searchBar" destination="hfb-RW-Ve7" id="xgV-pf-FzC"/>
                         <outlet property="tableView" destination="JRe-wp-mkm" id="uzF-d5-oAw"/>
+                        <segue destination="XhJ-a6-aPe" kind="show" identifier="VideoDetailViewController" id="rb1-vj-Yrj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2064" y="241"/>
         </scene>
-        <!--View Controller-->
+        <!--Video Detail View Controller-->
         <scene sceneID="RbY-dk-hmv">
             <objects>
-                <viewController id="XhJ-a6-aPe" sceneMemberID="viewController">
+                <viewController id="XhJ-a6-aPe" customClass="VideoDetailViewController" customModule="Pocket_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UWv-bS-psm"/>
                         <viewControllerLayoutGuide type="bottom" id="yw8-H6-9ad"/>
@@ -70,12 +91,48 @@
                     <view key="view" contentMode="scaleToFill" id="kr6-xm-QCI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYP-Ot-NLY" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Vbf-gy-SGO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWj-7j-12c">
+                                <rect key="frame" x="8" y="272" width="140.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EON-4v-3Iu">
+                                <rect key="frame" x="8" y="304" width="584" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jWj-7j-12c" firstAttribute="top" secondItem="VYP-Ot-NLY" secondAttribute="bottom" constant="8" id="Bdk-16-T8t"/>
+                            <constraint firstItem="jWj-7j-12c" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" constant="8" id="ELf-Ve-EtZ"/>
+                            <constraint firstItem="EON-4v-3Iu" firstAttribute="top" secondItem="jWj-7j-12c" secondAttribute="bottom" constant="8" id="Gdc-DP-OYX"/>
+                            <constraint firstAttribute="trailing" secondItem="VYP-Ot-NLY" secondAttribute="trailing" id="b8N-eI-DeH"/>
+                            <constraint firstItem="VYP-Ot-NLY" firstAttribute="top" secondItem="UWv-bS-psm" secondAttribute="bottom" id="mf0-2b-Tw7"/>
+                            <constraint firstItem="VYP-Ot-NLY" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" id="txc-ad-7Xr"/>
+                            <constraint firstAttribute="trailing" secondItem="EON-4v-3Iu" secondAttribute="trailing" constant="8" id="vuR-CM-B1A"/>
+                            <constraint firstItem="EON-4v-3Iu" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" constant="8" id="zev-GB-vhR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="EON-4v-3Iu" id="jSf-gv-rce"/>
+                        <outlet property="titleLabel" destination="jWj-7j-12c" id="Iuc-nl-gaH"/>
+                        <outlet property="videoPlayerView" destination="VYP-Ot-NLY" id="eWF-5q-F6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mca-QC-c7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2810" y="241"/>
+            <point key="canvasLocation" x="3796" y="975"/>
         </scene>
         <!--New Pantry Item View Controller-->
         <scene sceneID="IV4-V7-03B">
@@ -219,29 +276,12 @@
                     <connections>
                         <outlet property="editButton" destination="2VR-WU-FA4" id="hiR-Uu-Bti"/>
                         <outlet property="tableView" destination="l75-YE-vNW" id="DlT-vV-NOi"/>
+                        <segue destination="XhJ-a6-aPe" kind="show" identifier="VideoDetailViewController" id="9P8-DS-EZi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2n-xp-jNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2064" y="1697"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="sRT-Qr-gdM">
-            <objects>
-                <viewController id="EY8-Lg-6Xl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8fh-cG-uTu"/>
-                        <viewControllerLayoutGuide type="bottom" id="EW5-6h-VyH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="feI-84-eKL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CEF-OI-KQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2854" y="1697"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="g0L-Dw-4yP">
@@ -318,4 +358,7 @@
             <point key="canvasLocation" x="1252" y="1697"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rb1-vj-Yrj"/>
+    </inferredMetricsTieBreakers>
 </document>

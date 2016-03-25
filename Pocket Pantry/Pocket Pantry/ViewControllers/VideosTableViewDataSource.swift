@@ -10,6 +10,7 @@ import UIKit
 import GradientView
 
 class VideosTableViewDataSource: NSObject, UITableViewDataSource {
+  var controller: VideosViewController!
 
   // MARK: - Properties
   
@@ -33,5 +34,4 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   func refreshData() {
     YoutubeAPI.sharedInstance.refreshVideoIDs()
   }
-  
 }

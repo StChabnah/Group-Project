@@ -9,5 +9,10 @@
 import UIKit
 
 class VideosTableViewDelegate: NSObject, UITableViewDelegate {
+  var controller: VideosViewController!
   
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    controller.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    controller.performSegueWithIdentifier("VideoDetailViewController", sender: self)
+  }
 }
