@@ -10,6 +10,7 @@ import UIKit
 import GradientView
 
 class VideosTableViewDataSource: NSObject, UITableViewDataSource {
+  var controller: VideosViewController!
 
   // MARK: - Properties
   
@@ -27,5 +28,4 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 20//data?.count ?? 0
   }
-  
 }
