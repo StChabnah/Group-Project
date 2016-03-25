@@ -28,4 +28,10 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     return 20//data?.count ?? 0
   }
   
+  // MARK: Refreshing
+  
+  func refreshData() {
+    YoutubeAPI.sharedInstance.refreshVideoIDs()
+  }
+  
 }

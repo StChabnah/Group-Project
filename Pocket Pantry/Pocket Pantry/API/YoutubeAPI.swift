@@ -30,23 +30,46 @@ class YoutubeAPI {
   
   func refreshVideoIDs() {
     // Query for the playlists in this channel
-    var query = "https://www.googleapis.com/youtube/v3/playlists?part=contentDetails%2C+snippet&channelId=\(channelID)&key={\(apikey)}"
-    Alamofire.request(.GET, query).responseJSON { (response) in
-      if let response = response as? NSDictionary {
-        print(response)
+    var query = "https://www.googleapis.com/youtube/v3/playlists"//?part=contentDetails%2C+snippet&channelId=\(channelID)&key={\(apikey)}"
+    let request = Alamofire.request(.GET, query, parameters: ["part":"contentDetails,snippet", "channelId":channelID, "key":apikey])
+    print(request.request?.URL)
+    request.responseJSON { (response) in
+      if let items = (response.result.value as? NSDictionary)?["items"] as? NSArray {
+        self.playlists = [Playlist]()
+        for item in items {
+          if let item = item as? NSDictionary {
+            self.playlists?.append(Playlist(dict: item))
+          }
+        }
+        for each in self.playlists! {
+          print(each)
+        }
       }
       else {
         print(response)
       }
-    }
-    
-    if let playlists = playlists {
-      for playlist in playlists {
-        query = "https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2C+snippet&playlistId=\(playlist.id)&key={\(apikey)}"
-        // TODO: Add query accessing stuff
+      
+      if let playlists = self.playlists {
+        for playlist in playlists {
+          query = "https://www.googleapis.com/youtube/v3/playlistItems"//?part=contentDetails%2C+snippet&playlistId=\(playlist.id)&key={\(apikey)}"
+          if let playlistID = playlist.id {
+            Alamofire.request(.GET, query, parameters: ["part":"contentDetails,snippet", "playlistId":playlistID, "key":self.apikey]).responseJSON(completionHandler: { (response) in
+              if let items = (response.result.value as? NSDictionary)?["items"] as? NSArray {
+                for item in items {
+                  if let item = item as? NSDictionary {
+                    playlist.addVideo(dict: item)
+                  }
+                }
+                print(playlist.videos)
+              }
+              else {
+                print(response)
+              }
+            })
+          }
+        }
       }
     }
-    
   }
   
   func getVideos() -> [[Video]]? {

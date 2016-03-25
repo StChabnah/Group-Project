@@ -29,6 +29,8 @@ class VideosViewController: UIViewController {
     
     tableView.delegate = delegate
     tableView.dataSource = dataSource
+    
+    dataSource.refreshData()
   }
 }
 
