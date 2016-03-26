@@ -13,6 +13,6 @@ class VideosTableViewDelegate: NSObject, UITableViewDelegate {
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     controller.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    controller.performSegueWithIdentifier("VideoDetailViewController", sender: self)
+    controller.performSegueWithIdentifier("VideoDetailViewController", sender: controller.tableView.cellForRowAtIndexPath(indexPath))
   }
 }

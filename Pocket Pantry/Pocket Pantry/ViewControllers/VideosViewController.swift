@@ -39,5 +39,13 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     // TODO:
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "VideoDetailViewController" {
+      let vc = segue.destinationViewController as! VideoDetailViewController
+      let cell = sender as! VideoTableViewCell
+      vc.video = cell.video
+    }
+  }
 }
 

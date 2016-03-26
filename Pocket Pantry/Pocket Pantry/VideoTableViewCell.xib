@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,68 +11,55 @@
             <rect key="frame" x="0.0" y="0.0" width="487" height="128"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J1o-Vn-u5g" id="Ek2-Sk-fux">
-                <rect key="frame" x="0.0" y="0.0" width="487" height="127.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="487" height="127"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-LL-MRY">
-                        <rect key="frame" x="0.0" y="0.0" width="487" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="487" height="127"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="pLd-Cn-lfA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pLd-Cn-lfA"/>
+                            </mask>
+                        </variation>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mb-CA-3GT">
-                        <rect key="frame" x="0.0" y="0.0" width="487" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="487" height="127"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-hX-RLZ">
                         <rect key="frame" x="8" y="8" width="151" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Npz-Ym-0Lz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHI-Vl-TpY">
-                        <rect key="frame" x="8" y="40" width="471" height="80"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="160" id="j2M-UV-Gp5"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="j2M-UV-Gp5"/>
-                            </mask>
-                        </variation>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="zHI-Vl-TpY" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" constant="8" id="25A-RH-e0o"/>
-                    <constraint firstItem="zHI-Vl-TpY" firstAttribute="top" secondItem="c3x-hX-RLZ" secondAttribute="bottom" constant="8" id="37q-zO-JHw"/>
-                    <constraint firstAttribute="trailing" secondItem="zHI-Vl-TpY" secondAttribute="trailing" constant="8" id="4Oc-s5-bZL"/>
-                    <constraint firstItem="zHI-Vl-TpY" firstAttribute="leading" secondItem="c3x-hX-RLZ" secondAttribute="trailing" constant="8" id="Dhz-Yg-HIR"/>
-                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="Hdr-6R-SaG"/>
-                    <constraint firstItem="Amf-LL-MRY" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="ImV-TJ-3s4"/>
-                    <constraint firstItem="zHI-Vl-TpY" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" constant="16" id="Img-pa-Mko"/>
-                    <constraint firstItem="Amf-LL-MRY" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="NYE-Ph-ukL"/>
-                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" constant="8" id="Ph0-T7-g5S"/>
-                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="cwn-2Z-66k"/>
-                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" constant="8" id="nkP-LV-U1O"/>
-                    <constraint firstAttribute="bottom" secondItem="Amf-LL-MRY" secondAttribute="bottom" id="qWp-iW-bPf"/>
-                    <constraint firstAttribute="trailing" secondItem="8Mb-CA-3GT" secondAttribute="trailing" id="qmI-VC-CMa"/>
-                    <constraint firstAttribute="trailing" secondItem="Amf-LL-MRY" secondAttribute="trailing" id="vBS-as-re2"/>
-                    <constraint firstAttribute="bottom" secondItem="zHI-Vl-TpY" secondAttribute="bottom" constant="8" id="ySB-k6-bV6"/>
-                    <constraint firstAttribute="bottom" secondItem="8Mb-CA-3GT" secondAttribute="bottom" id="zKp-FX-rk5"/>
+                    <constraint firstAttribute="trailing" secondItem="Amf-LL-MRY" secondAttribute="trailing" id="8RY-71-FE1"/>
+                    <constraint firstAttribute="trailing" secondItem="8Mb-CA-3GT" secondAttribute="trailing" id="9hY-Kq-Sd3"/>
+                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" constant="8" id="CXu-Z0-iOb"/>
+                    <constraint firstAttribute="bottom" secondItem="Amf-LL-MRY" secondAttribute="bottom" id="Gi8-ef-oi5"/>
+                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" constant="8" id="LG4-R4-qbz"/>
+                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="edh-hP-ehi"/>
+                    <constraint firstItem="Amf-LL-MRY" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="gEk-hi-WO8"/>
+                    <constraint firstItem="c3x-hX-RLZ" firstAttribute="top" secondItem="8Mb-CA-3GT" secondAttribute="bottom" constant="8" id="jdS-Qz-YUV"/>
+                    <constraint firstAttribute="bottom" secondItem="8Mb-CA-3GT" secondAttribute="bottom" id="sAm-Ni-AeC"/>
+                    <constraint firstItem="8Mb-CA-3GT" firstAttribute="top" secondItem="Ek2-Sk-fux" secondAttribute="top" id="vwk-ue-9bz"/>
+                    <constraint firstItem="Amf-LL-MRY" firstAttribute="leading" secondItem="Ek2-Sk-fux" secondAttribute="leading" id="w4I-ZM-0d1"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="Dhz-Yg-HIR"/>
-                        <exclude reference="Img-pa-Mko"/>
+                        <exclude reference="jdS-Qz-YUV"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="gradientViewContainer" destination="8Mb-CA-3GT" id="dUf-zY-mRr"/>
-                <outlet property="recipeDescriptionLabel" destination="zHI-Vl-TpY" id="oSj-9d-7q1"/>
                 <outlet property="recipeNameLabel" destination="c3x-hX-RLZ" id="ELo-80-C0c"/>
                 <outlet property="videoImageView" destination="Amf-LL-MRY" id="f92-ia-a8t"/>
             </connections>

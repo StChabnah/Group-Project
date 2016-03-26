@@ -21,7 +21,6 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell
     cell?.video = data?[indexPath.section].videos[indexPath.row]
-    
     return cell!
   }
   

@@ -14,6 +14,14 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var descriptionLabel: UILabel!
   
+  var video: Video! {
+    didSet {
+      setupVideoPlayer(withVideoID: video.videoID!)
+      titleLabel.text = video.title
+      descriptionLabel.text = video.videoDescription
+    }
+  }
+  
   // TODO:
   // https://github.com/youtube/youtube-ios-player-helper/issues/48
   // https://github.com/youtube/youtube-ios-player-helper/issues/29
@@ -22,10 +30,13 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
     super.viewDidLoad()
     
     videoPlayerView.delegate = self
+  }
+  
+  func setupVideoPlayer(withVideoID videoID: String) {
     let width = NSString(format: "0.00f", view.frame.size.width)
     let height = NSString(format: "0.00f", videoPlayerView.frame.size.height)
     let playerVars = ["playsinline": 1, "modestbranding": 1, "width": width, "height": height]
-    videoPlayerView.loadWithVideoId("MpPIwaiN_uY", playerVars: playerVars)
+    videoPlayerView.loadWithVideoId(videoID, playerVars: playerVars)
   }
   
   func playerView(playerView: YTPlayerView, didChangeToState state: YTPlayerState) {

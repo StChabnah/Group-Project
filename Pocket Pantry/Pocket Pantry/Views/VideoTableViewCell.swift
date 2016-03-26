@@ -13,7 +13,6 @@ import AFNetworking
 class VideoTableViewCell: UITableViewCell {
   @IBOutlet var videoImageView: UIImageView!
   @IBOutlet var recipeNameLabel: UILabel!
-  @IBOutlet var recipeDescriptionLabel: UILabel!
   @IBOutlet var gradientViewContainer: UIView!
   
   var video: Video! {
@@ -23,18 +22,26 @@ class VideoTableViewCell: UITableViewCell {
   }
   
   func setupCell() {
-    videoImageView.setImageWithURL(NSURL(string: video.mediumThumbnailURL!)!)
+    if let smallImage = video.getThumbnailURL(thumbnailSize: .Small) {
+      videoImageView.setImageWithURL(NSURL(string: smallImage)!)
+    }
+    if let mediumImage = video.getThumbnailURL(thumbnailSize: .Medium) {
+      videoImageView.setImageWithURL(NSURL(string: mediumImage)!)
+    }
+    if let highImage = video.getThumbnailURL(thumbnailSize: .ExtraHigh) {
+      videoImageView.setImageWithURL(NSURL(string: highImage)!)
+    }
+    
     recipeNameLabel.text = video.title
-    recipeDescriptionLabel.text = video.videoDescription
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    videoImageView.clipsToBounds = true
+    //videoImageView.clipsToBounds = true
     
     let gradientView = GradientView(frame: frame)
-    let blackColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+    let blackColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
     gradientView.colors = [blackColor, UIColor.clearColor()]
     gradientView.locations = [0.0, 0.7]
     gradientView.direction = .Horizontal
@@ -47,6 +54,5 @@ class VideoTableViewCell: UITableViewCell {
     
     videoImageView.image = nil
     recipeNameLabel.text = nil
-    recipeDescriptionLabel.text = nil
   }
 }
