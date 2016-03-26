@@ -92,18 +92,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWj-7j-12c">
-                                <rect key="frame" x="8" y="302" width="141" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EON-4v-3Iu">
-                                <rect key="frame" x="8" y="334" width="584" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYP-Ot-NLY" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="230"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,21 +99,87 @@
                                     <constraint firstAttribute="height" constant="230" id="Vbf-gy-SGO"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-EX-tLH">
+                                <rect key="frame" x="0.0" y="294" width="600" height="257"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rh9-Lu-YXS" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="213"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWj-7j-12c">
+                                                <rect key="frame" x="8" y="8" width="141" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="44w-pQ-LAn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EON-4v-3Iu">
+                                                <rect key="frame" x="8" y="40" width="584" height="160"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="EON-4v-3Iu" firstAttribute="top" secondItem="jWj-7j-12c" secondAttribute="bottom" constant="8" id="BBB-rH-iSC"/>
+                                            <constraint firstItem="jWj-7j-12c" firstAttribute="top" secondItem="Rh9-Lu-YXS" secondAttribute="top" constant="8" id="HL3-t4-fk6"/>
+                                            <constraint firstItem="EON-4v-3Iu" firstAttribute="leading" secondItem="Rh9-Lu-YXS" secondAttribute="leading" constant="8" id="Rsi-y1-G8N"/>
+                                            <constraint firstItem="EON-4v-3Iu" firstAttribute="leading" secondItem="Rh9-Lu-YXS" secondAttribute="leading" constant="8" id="aBa-Uy-L0Q"/>
+                                            <constraint firstItem="EON-4v-3Iu" firstAttribute="top" secondItem="jWj-7j-12c" secondAttribute="bottom" constant="8" id="brp-gO-nI4"/>
+                                            <constraint firstItem="jWj-7j-12c" firstAttribute="leading" secondItem="Rh9-Lu-YXS" secondAttribute="leading" constant="8" id="hqI-0Z-X9W"/>
+                                            <constraint firstAttribute="trailing" secondItem="EON-4v-3Iu" secondAttribute="trailing" constant="8" id="kBh-hT-bxq"/>
+                                            <constraint firstAttribute="trailing" secondItem="EON-4v-3Iu" secondAttribute="trailing" constant="8" id="pUX-bz-AlQ"/>
+                                            <constraint firstAttribute="height" constant="200" id="uVH-Zk-1G5"/>
+                                            <constraint firstAttribute="bottom" secondItem="EON-4v-3Iu" secondAttribute="bottom" id="zYs-Nk-9mZ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="BBB-rH-iSC"/>
+                                                <exclude reference="aBa-Uy-L0Q"/>
+                                                <exclude reference="kBh-hT-bxq"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="3HD-VF-Rlv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rh9-Lu-YXS" secondAttribute="bottom" id="Luq-ui-RGB"/>
+                                    <constraint firstItem="Rh9-Lu-YXS" firstAttribute="leading" secondItem="2oN-EX-tLH" secondAttribute="leading" id="Nzm-fn-YmW"/>
+                                    <constraint firstItem="Rh9-Lu-YXS" firstAttribute="leading" secondItem="2oN-EX-tLH" secondAttribute="leading" id="faH-WA-OH8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rh9-Lu-YXS" secondAttribute="trailing" id="gKp-Nx-pKl"/>
+                                    <constraint firstItem="Rh9-Lu-YXS" firstAttribute="top" secondItem="2oN-EX-tLH" secondAttribute="top" id="mHV-qV-Qfv"/>
+                                    <constraint firstItem="Rh9-Lu-YXS" firstAttribute="top" secondItem="2oN-EX-tLH" secondAttribute="top" id="tEQ-d3-cHV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rh9-Lu-YXS" secondAttribute="trailing" id="wNx-JG-J2z"/>
+                                    <constraint firstItem="Rh9-Lu-YXS" firstAttribute="centerX" secondItem="2oN-EX-tLH" secondAttribute="centerX" id="xIe-oq-Exq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rh9-Lu-YXS" secondAttribute="bottom" id="z72-Dc-GtF"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Luq-ui-RGB"/>
+                                        <exclude reference="Nzm-fn-YmW"/>
+                                        <exclude reference="gKp-Nx-pKl"/>
+                                        <exclude reference="tEQ-d3-cHV"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jWj-7j-12c" firstAttribute="top" secondItem="VYP-Ot-NLY" secondAttribute="bottom" constant="8" id="Bdk-16-T8t"/>
-                            <constraint firstItem="jWj-7j-12c" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" constant="8" id="ELf-Ve-EtZ"/>
-                            <constraint firstItem="EON-4v-3Iu" firstAttribute="top" secondItem="jWj-7j-12c" secondAttribute="bottom" constant="8" id="Gdc-DP-OYX"/>
+                            <constraint firstItem="Rh9-Lu-YXS" firstAttribute="width" secondItem="kr6-xm-QCI" secondAttribute="width" id="0gi-fl-omX"/>
+                            <constraint firstAttribute="trailing" secondItem="2oN-EX-tLH" secondAttribute="trailing" id="JfQ-Np-B8A"/>
+                            <constraint firstItem="2oN-EX-tLH" firstAttribute="top" secondItem="VYP-Ot-NLY" secondAttribute="bottom" id="S2i-ea-7bC"/>
+                            <constraint firstItem="2oN-EX-tLH" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" id="Sw5-7d-2eX"/>
+                            <constraint firstItem="yw8-H6-9ad" firstAttribute="top" secondItem="2oN-EX-tLH" secondAttribute="bottom" id="URt-sw-TJx"/>
                             <constraint firstAttribute="trailing" secondItem="VYP-Ot-NLY" secondAttribute="trailing" id="b8N-eI-DeH"/>
                             <constraint firstItem="VYP-Ot-NLY" firstAttribute="top" secondItem="UWv-bS-psm" secondAttribute="bottom" id="mf0-2b-Tw7"/>
                             <constraint firstItem="VYP-Ot-NLY" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" id="txc-ad-7Xr"/>
-                            <constraint firstAttribute="trailing" secondItem="EON-4v-3Iu" secondAttribute="trailing" constant="8" id="vuR-CM-B1A"/>
-                            <constraint firstItem="EON-4v-3Iu" firstAttribute="leading" secondItem="kr6-xm-QCI" secondAttribute="leading" constant="8" id="zev-GB-vhR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="Rh9-Lu-YXS" id="BlS-iQ-8ej"/>
                         <outlet property="descriptionLabel" destination="EON-4v-3Iu" id="jSf-gv-rce"/>
+                        <outlet property="scrollViewHeightConstraint" destination="uVH-Zk-1G5" id="5fh-us-q5D"/>
                         <outlet property="titleLabel" destination="jWj-7j-12c" id="Iuc-nl-gaH"/>
                         <outlet property="videoPlayerView" destination="VYP-Ot-NLY" id="eWF-5q-F6n"/>
                     </connections>
