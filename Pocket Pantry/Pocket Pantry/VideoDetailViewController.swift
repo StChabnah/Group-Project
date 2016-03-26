@@ -16,7 +16,7 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   
   var video: Video! {
     didSet {
-      setupVideoPlayer(withVideoID: video.id!)
+      setupVideoPlayer(withVideoID: video.videoID!)
       titleLabel.text = video.title
       descriptionLabel.text = video.videoDescription
     }
