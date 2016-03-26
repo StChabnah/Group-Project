@@ -23,9 +23,9 @@ class VideoTableViewCell: UITableViewCell {
   }
   
   func setupCell() {
-    videoImageView.setImageWithURL(NSURL(string: video.getThumbnailURL(thumbnailSize: ThumbnailQuality.Small)!)!)
+    videoImageView.setImageWithURL(NSURL(string: video.mediumThumbnailURL!)!)
     recipeNameLabel.text = video.title
-    recipeDescriptionLabel.text = video.videoDescription
+    recipeDescriptionLabel.text = video.description
   }
 
   override func awakeFromNib() {

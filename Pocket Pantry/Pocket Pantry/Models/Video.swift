@@ -68,16 +68,16 @@ class Video: Object {
   
   func getThumbnailURL(thumbnailSize size: ThumbnailQuality) -> String? {
     switch size {
-    case .Small:
-      return defaultThumbnailURL
-    case .Medium:
-      return mediumThumbnailURL
-    case .High:
-      return highThumbnailURL
-    case .ExtraHigh:
-      return standardThumbnailURL
-    case .MaxResolution:
-      return maxresThumbnailURL
+      case .Small:
+        return defaultThumbnailURL
+      case .Medium:
+        return mediumThumbnailURL
+      case .High:
+        return highThumbnailURL
+      case .ExtraHigh:
+        return standardThumbnailURL
+      case .MaxResolution:
+        return maxresThumbnailURL
     }
   }
   
