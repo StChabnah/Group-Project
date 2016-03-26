@@ -9,15 +9,34 @@
 import UIKit
 import youtube_ios_player_helper
 
-class VideoDetailViewController: UIViewController {
+class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   @IBOutlet var videoPlayerView: YTPlayerView!
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var descriptionLabel: UILabel!
+  
+  // TODO:
+  // https://github.com/youtube/youtube-ios-player-helper/issues/48
+  // https://github.com/youtube/youtube-ios-player-helper/issues/29
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    videoPlayerView.loadVideoById("M7lc1UVf-VE", startSeconds: 0.0, endSeconds: 15.0, suggestedQuality: .Auto)
+    videoPlayerView.delegate = self
+    let width = NSString(format: "0.00f", view.frame.size.width)
+    let height = NSString(format: "0.00f", videoPlayerView.frame.size.height)
+    let playerVars = ["playsinline": 1, "modestbranding": 1, "width": width, "height": height]
+    videoPlayerView.loadWithVideoId("MpPIwaiN_uY", playerVars: playerVars)
+  }
+  
+  func playerView(playerView: YTPlayerView, didChangeToState state: YTPlayerState) {
+  }
+  
+  func playerViewPreferredWebViewBackgroundColor(playerView: YTPlayerView) -> UIColor {
+    return UIColor.blackColor()
+  }
+  
+  func playerViewDidBecomeReady(playerView: YTPlayerView) {
+    playerView.playVideo()
   }
 
   override func didReceiveMemoryWarning() {
