@@ -66,19 +66,46 @@ class Video: Object {
     }
   }
   
-  func getThumbnailURL(thumbnailSize size: ThumbnailQuality) -> String? {
-    switch size {
-      case .Small:
-        return defaultThumbnailURL
-      case .Medium:
-        return mediumThumbnailURL
-      case .High:
-        return highThumbnailURL
-      case .ExtraHigh:
-        return standardThumbnailURL
-      case .MaxResolution:
-        return maxresThumbnailURL
+  ///  Returns either the URL of the thumbnail size provided, or the URL of the 
+  ///    next smallest thumbnail that is avalible.
+  ///
+  ///  - parameter size: The size of the thumbnail desired
+  ///
+  ///  - returns: An NSURL? of the thumbnail desired, or the next smallest not nil
+  ///               thumbnail URL
+  ///
+  /// - author: Nathan Ansel
+  ///
+  func getThumbnailURL(thumbnailSize size: ThumbnailQuality) -> NSURL? {
+    var getNextSmallest = false
+    if size == .MaxResolution {
+      if let url = NSURL(string: maxresThumbnailURL ?? "") {
+        return url
+      }
+      getNextSmallest = true
     }
+    if size == .ExtraHigh || getNextSmallest {
+      if let url = NSURL(string: standardThumbnailURL ?? "") {
+        return url
+      }
+      getNextSmallest = true
+    }
+    if size == .High || getNextSmallest {
+      if let url = NSURL(string: highThumbnailURL ?? "") {
+        return url
+      }
+      getNextSmallest = true
+    }
+    if size == .Medium || getNextSmallest {
+      if let url = NSURL(string: mediumThumbnailURL ?? "") {
+        return url
+      }
+      getNextSmallest = true
+    }
+    if size == .Small || getNextSmallest {
+      return NSURL(string: defaultThumbnailURL ?? "")
+    }
+    return nil
   }
   
   // Needed to tell Realm which key to use as the primary key
