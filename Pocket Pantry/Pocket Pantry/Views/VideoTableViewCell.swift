@@ -23,13 +23,13 @@ class VideoTableViewCell: UITableViewCell {
   
   func setupCell() {
     if let smallImage = video.getThumbnailURL(thumbnailSize: .Small) {
-      videoImageView.setImageWithURL(NSURL(string: smallImage)!)
+      videoImageView.setImageWithURL(smallImage)
     }
     if let mediumImage = video.getThumbnailURL(thumbnailSize: .Medium) {
-      videoImageView.setImageWithURL(NSURL(string: mediumImage)!)
+      videoImageView.setImageWithURL(mediumImage)
     }
     if let highImage = video.getThumbnailURL(thumbnailSize: .ExtraHigh) {
-      videoImageView.setImageWithURL(NSURL(string: highImage)!)
+      videoImageView.setImageWithURL(highImage)
     }
     
     recipeNameLabel.text = video.title
