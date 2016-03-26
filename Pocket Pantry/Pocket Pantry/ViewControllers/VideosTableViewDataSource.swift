@@ -22,7 +22,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell
     cell?.video = data?[indexPath.section].videos[indexPath.row]
     
-    return cell
+    return cell!
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +40,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   // MARK: Refreshing
   
   func refreshData() {
+    self.data = YoutubeAPI.sharedInstance.getPlaylists()
     YoutubeAPI.sharedInstance.refreshData { (playlists) in
       self.data = playlists
       self.controller.tableView.reloadData()
