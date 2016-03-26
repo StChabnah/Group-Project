@@ -23,9 +23,9 @@ class VideoTableViewCell: UITableViewCell {
   }
   
   func setupCell() {
-    videoImageView.setImageWithURL(<#T##url: NSURL##NSURL#>)
-    recipeNameLabel.text = video.name
-    recipeDescriptionLabel.text = video.description
+    videoImageView.setImageWithURL(NSURL(string: video.getThumbnailURL(thumbnailSize: ThumbnailQuality.Small)!)!)
+    recipeNameLabel.text = video.title
+    recipeDescriptionLabel.text = video.videoDescription
   }
 
   override func awakeFromNib() {
@@ -44,5 +44,9 @@ class VideoTableViewCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
+    
+    videoImageView.image = nil
+    recipeNameLabel.text = nil
+    recipeDescriptionLabel.text = nil
   }
 }
