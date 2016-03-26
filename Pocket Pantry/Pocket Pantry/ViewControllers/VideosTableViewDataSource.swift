@@ -14,7 +14,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
 
   // MARK: - Properties
   
-  var data: [Video]?
+  var data: [Playlist]?
   
   // MARK: - Methods
   
@@ -26,12 +26,15 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 20//data?.count ?? 0
+    return data?.count ?? 0
   }
   
   // MARK: Refreshing
   
   func refreshData() {
-    YoutubeAPI.sharedInstance.refreshVideoIDs()
+    YoutubeAPI.sharedInstance.refreshData { (playlists) in
+      self.data = playlists
+      self.controller.tableView.reloadData()
+    }
   }
 }

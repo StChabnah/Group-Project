@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Playlist {
+class Playlist: Object {
   
-  var id: String?
-  var title: String?
-  var count: Int?
-  var videos: [Video]?
+  dynamic var id: String?
+  dynamic var title: String?
+  dynamic var count: Int = 0
+  var videos: List<Video> = List<Video>()
   
-  init(dict: NSDictionary) {
+  convenience init(dict: NSDictionary) {
+    self.init()
     setUp(dict: dict)
   }
   
@@ -23,22 +25,23 @@ class Playlist {
     id = dict["id"] as? String
     title = (dict["snippet"] as? NSDictionary)?["title"] as? String
     if let details = dict["contentDetails"] as? NSDictionary {
-      count = details["itemCount"] as? Int
+      count = details["itemCount"] as? Int ?? 0
     }
     if let videoList = (dict["items"] as? NSArray) {
-      videos = [Video]()
       for item in videoList{
         if let item = (item as? NSDictionary) {
-          videos?.append(Video(dict: item))
+          videos.append(Video(dict: item))
         }
       }
     }
   }
   
   func addVideo(dict dict: NSDictionary) {
-    if videos == nil {
-      videos = [Video]()
-    }
-    videos!.append(Video(dict: dict))
+    videos.append(Video(dict: dict))
+  }
+  
+  // Needed to tell Realm which key to use as the primary key
+  override class func primaryKey() -> String {
+    return "id"
   }
 }

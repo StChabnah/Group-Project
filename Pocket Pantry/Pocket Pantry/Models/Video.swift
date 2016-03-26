@@ -7,15 +7,82 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Video {
+enum ThumbnailQuality {
+  /// height = 90
+  /// width = 120
+  case Small
   
-  var name: String?
-  var length: CGFloat?
-  var videoDescription: String?
+  /// height = 180
+  /// width = 320
+  case Medium
   
-  init(dict: NSDictionary) {
-    name = dict[""] as? String
-    videoDescription = dict[""] as? String
+  /// height = 360
+  /// width = 480
+  case High
+  
+  /// height = 480
+  /// width = 640
+  case ExtraHigh
+  
+  /// height = 720
+  /// width = 1280
+  case MaxResolution
+}
+
+class Video: Object {
+  
+  dynamic var id: String?
+  dynamic var videoID: String?
+  dynamic var title: String?
+  dynamic var videoDescription: String?
+  dynamic var publishDate: NSDate?
+  dynamic var favorite: Bool = false
+  
+  dynamic internal var defaultThumbnailURL: String?
+  dynamic internal var mediumThumbnailURL: String?
+  dynamic internal var highThumbnailURL: String?
+  dynamic internal var standardThumbnailURL: String?
+  dynamic internal var maxresThumbnailURL: String?
+  
+  convenience init(dict: NSDictionary) {
+    self.init()
+    id = dict["id"] as? String
+    if let snippet = dict["snippet"] as? NSDictionary {
+      videoID = snippet["videoID"] as? String
+      title = snippet["title"] as? String
+      videoDescription = snippet["description"] as? String
+      let formatter = NSDateFormatter()
+      formatter.dateFormat = "yyyy-MM-ddThh:mm:ss.SSSZ" // 2016-03-23T22:30:42.000Z
+      publishDate = formatter.dateFromString(snippet["publishedAt"] as? String ?? "")
+      if let thumbnails = snippet["thumbnails"] as? NSDictionary {
+        defaultThumbnailURL  = (thumbnails["default"] as? NSDictionary)?["url"] as? String
+        mediumThumbnailURL   = (thumbnails["medium"] as? NSDictionary)?["url"] as? String
+        highThumbnailURL     = (thumbnails["high"] as? NSDictionary)?["url"] as? String
+        standardThumbnailURL = (thumbnails["standard"] as? NSDictionary)?["url"] as? String
+        maxresThumbnailURL   = (thumbnails["maxres"] as? NSDictionary)?["url"] as? String
+      }
+    }
+  }
+  
+  func getThumbnailURL(thumbnailSize size: ThumbnailQuality) -> String? {
+    switch size {
+    case .Small:
+      return defaultThumbnailURL
+    case .Medium:
+      return mediumThumbnailURL
+    case .High:
+      return highThumbnailURL
+    case .ExtraHigh:
+      return standardThumbnailURL
+    case .MaxResolution:
+      return maxresThumbnailURL
+    }
+  }
+  
+  // Needed to tell Realm which key to use as the primary key
+  override class func primaryKey() -> String {
+    return "id"
   }
 }

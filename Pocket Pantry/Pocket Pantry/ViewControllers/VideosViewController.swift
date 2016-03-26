@@ -31,16 +31,13 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
     
     tableView.delegate = delegate
     tableView.dataSource = dataSource
-<<<<<<< HEAD
     
     dataSource.refreshData()
-=======
     searchBar.delegate = self
   }
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     // TODO:
->>>>>>> origin/master
   }
 }
 

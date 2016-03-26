@@ -11,6 +11,7 @@
 		2E289D9A1CA581C1008505DD /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E289D991CA581C1008505DD /* VideoDetailViewController.swift */; };
 		5F5A00CA1447E7F5C81D2B3D /* Pods_Pocket_Pantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */; };
 		A4ACDF1A1CA36813008FF447 /* NewPantryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ACDF191CA36813008FF447 /* NewPantryItemViewController.swift */; };
+		D809D15F1CA617FB00915C13 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809D15E1CA617FB00915C13 /* StorageService.swift */; };
 		D8426D171C907B8F00E091D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8426D161C907B8F00E091D5 /* AppDelegate.swift */; };
 		D8426D1C1C907B8F00E091D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1A1C907B8F00E091D5 /* Main.storyboard */; };
 		D8426D1E1C907B8F00E091D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8426D1D1C907B8F00E091D5 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		9685A4B2AF447A4415F2578D /* Pods-Pocket Pantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket Pantry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pocket Pantry/Pods-Pocket Pantry.release.xcconfig"; sourceTree = "<group>"; };
 		A4ACDF191CA36813008FF447 /* NewPantryItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPantryItemViewController.swift; sourceTree = "<group>"; };
 		BCF95099C5E4D6890908E8F0 /* Pods_Pocket_Pantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Pantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D809D15E1CA617FB00915C13 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D8426D131C907B8F00E091D5 /* Pocket Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Pantry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8426D161C907B8F00E091D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8426D1B1C907B8F00E091D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D8426D4C1C90B0ED00E091D5 /* YoutubeAPI.swift */,
+				D809D15E1CA617FB00915C13 /* StorageService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D8426D5F1C90B0ED00E091D5 /* Pantry.swift in Sources */,
 				D8426D621C90B0ED00E091D5 /* FavoritesTableViewDataSource.swift in Sources */,
 				D8426D5E1C90B0ED00E091D5 /* YoutubeAPI.swift in Sources */,
+				D809D15F1CA617FB00915C13 /* StorageService.swift in Sources */,
 				D8426D601C90B0ED00E091D5 /* PantryItem.swift in Sources */,
 				D8426D481C90B05900E091D5 /* PantryTableViewCell.swift in Sources */,
 				D8426D661C90B0ED00E091D5 /* PantryTableViewDelegate.swift in Sources */,
