@@ -12,10 +12,10 @@ class Video {
   
   var name: String?
   var length: CGFloat?
-  var videoDescription: String?
+  var description: String?
   
   init(dict: NSDictionary) {
     name = dict[""] as? String
-    videoDescription = dict[""] as? String
+    description = dict[""] as? String
   }
 }

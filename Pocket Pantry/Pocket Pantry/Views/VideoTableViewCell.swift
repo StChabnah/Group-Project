@@ -8,21 +8,31 @@
 
 import UIKit
 import GradientView
+import AFNetworking
 
 class VideoTableViewCell: UITableViewCell {
   @IBOutlet var videoImageView: UIImageView!
   @IBOutlet var recipeNameLabel: UILabel!
   @IBOutlet var recipeDescriptionLabel: UILabel!
   @IBOutlet var gradientViewContainer: UIView!
+  
+  var video: Video! {
+    didSet {
+      setupCell()
+    }
+  }
+  
+  func setupCell() {
+    videoImageView.setImageWithURL(<#T##url: NSURL##NSURL#>)
+    recipeNameLabel.text = video.name
+    recipeDescriptionLabel.text = video.description
+  }
 
   override func awakeFromNib() {
     super.awakeFromNib()
     
     videoImageView.clipsToBounds = true
     
-    videoImageView.image = UIImage(imageLiteral: "sexy")
-    
-    recipeDescriptionLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     let gradientView = GradientView(frame: frame)
     let blackColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
     gradientView.colors = [blackColor, UIColor.clearColor()]
