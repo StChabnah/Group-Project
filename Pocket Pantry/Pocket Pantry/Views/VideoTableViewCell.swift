@@ -23,8 +23,8 @@ class VideoTableViewCell: UITableViewCell {
   }
   
   func setupCell() {
-    videoImageView.setImageWithURL(<#T##url: NSURL##NSURL#>)
-    recipeNameLabel.text = video.name
+    videoImageView.setImageWithURL(NSURL(string: video.mediumThumbnailURL!)!)
+    recipeNameLabel.text = video.title
     recipeDescriptionLabel.text = video.description
   }
 

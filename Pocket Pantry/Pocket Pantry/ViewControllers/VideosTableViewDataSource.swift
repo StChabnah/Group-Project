@@ -19,10 +19,10 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   // MARK: - Methods
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell")
+    let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as! VideoTableViewCell
     // TODO: set up the cell
     
-    return cell!
+    return cell
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
