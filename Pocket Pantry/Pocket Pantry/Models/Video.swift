@@ -50,7 +50,7 @@ class Video: Object {
     self.init()
     id = dict["id"] as? String
     if let snippet = dict["snippet"] as? NSDictionary {
-      videoID = snippet["videoID"] as? String
+      videoID = (snippet["resourceId"] as? NSDictionary)?["videoId"] as? String
       title = snippet["title"] as? String
       videoDescription = snippet["description"] as? String
       let formatter = NSDateFormatter()
