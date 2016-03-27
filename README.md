@@ -2,15 +2,15 @@
 
 **Pocket Pantry** is a app to simplify the iPhone user interface by providing an interface that links to apps important to the user as well as providing an easy way to see weather and news data.
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Import recipe videos from YouTube
-- [ ] User can add ingredients to their “Pantry”
-- [ ] User can delete ingredients from their “Pantry”
+- [x] Import recipe videos from YouTube
+- [x] User can add ingredients to their “Pantry”
+- [x] User can delete ingredients from their “Pantry”
 - [ ] Parse recipe description into keywords that match ingredients that the User has added to their “Pantry”
 - [ ] User can favorite videos that are saved to a special tab in the user interface
 - [ ] Option to display all videos or only videos that are avalible based on ingredients in the User’s “Pantry”

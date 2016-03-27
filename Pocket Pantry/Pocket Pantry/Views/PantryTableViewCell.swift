@@ -10,6 +10,12 @@ import UIKit
 
 class PantryTableViewCell: UITableViewCell {
   
+  var item: PantryItem? {
+    didSet {
+      textLabel?.text = item?.name
+    }
+  }
+  
   override func awakeFromNib() {
     super.awakeFromNib()
   }

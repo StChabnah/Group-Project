@@ -7,13 +7,19 @@
 //
 
 import Foundation
+import RealmSwift
 
-class PantryItem {
+class PantryItem: Object {
   
-  var name: String?
+  dynamic var name: String?
   
-  convenience init(name: String?, number: Int?) {
+  convenience init(name: String?) {
     self.init()
     self.name = name
+  }
+  
+  // Needed to tell Realm which key to use as the primary key
+  override class func primaryKey() -> String {
+    return "name"
   }
 }

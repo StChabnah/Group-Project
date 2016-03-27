@@ -9,29 +9,27 @@
 import UIKit
 
 class NewPantryItemViewController: UIViewController {
-    var pantryTableView: PantryViewController!
-  
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()        
-        // Do any additional setup after loading the view.
-    }
+  var pantryTableView: PantryViewController!
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  @IBOutlet weak var saveButton: UIBarButtonItem!
+  @IBOutlet weak var textField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+  }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  @IBAction func navPop(sender: AnyObject) {
+    if textField.text != "" {
+      pantryTableView.dataSource.pantry.append(item: PantryItem(name: textField.text))
     }
-    
-    
-    @IBAction func navPop(sender: AnyObject) {
-      if textField.text != "" {
-        pantryTableView.dataSource.pantry.append(textField.text!)
-      }
-      navigationController?.popViewControllerAnimated(true)
-    }
+    navigationController?.popViewControllerAnimated(true)
+  }
     
   
 }
