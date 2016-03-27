@@ -15,4 +15,11 @@ class VideosTableViewDelegate: NSObject, UITableViewDelegate {
     controller.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     controller.performSegueWithIdentifier("VideoDetailViewController", sender: controller.tableView.cellForRowAtIndexPath(indexPath))
   }
+  
+  func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    view.tintColor = UIColor.blackColor()
+    
+    let header = view as! UITableViewHeaderFooterView
+    header.textLabel?.textColor = UIColor.whiteColor()
+  }
 }

@@ -34,11 +34,11 @@ class FavoritesViewController: UIViewController {
   
   @IBAction func editButtonPressed(sender: UIBarButtonItem) {
     if(tableView.editing == true) {
-      tableView.editing = false
+      tableView.setEditing(false, animated: true)
       sender.title = "Edit"
     }
     else {
-      tableView.editing = true
+      tableView.setEditing(true, animated: true)
       sender.title = "Done"
     }
   }
