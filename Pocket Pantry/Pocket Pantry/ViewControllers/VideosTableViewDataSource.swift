@@ -15,6 +15,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   // MARK: - Properties
   
   var data: [Playlist]?
+  var filteredData: [Playlist]?
   
   // MARK: - Methods
   
@@ -34,6 +35,22 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return data?[section].title
+  }
+  
+  func filterData(text text: String) {
+    for playlist in data! {
+      let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
+        if ((video.title?.containsString(text)) != nil) {
+          return true
+        }
+        return false
+      })
+      let filteredPlaylist = Playlist()
+      for video in filteredVideos {
+        filteredPlaylist.videos.append(video)
+      }
+      filteredData?.append(filteredPlaylist)
+    }
   }
   
   // MARK: Refreshing
