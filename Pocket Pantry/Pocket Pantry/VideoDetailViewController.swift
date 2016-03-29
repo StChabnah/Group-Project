@@ -16,13 +16,7 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   @IBOutlet var containerView: UIView!
   @IBOutlet var scrollViewHeightConstraint: NSLayoutConstraint!
   
-  var video: Video! {
-    didSet {
-      setupVideoPlayer(withVideoID: video.videoID!)
-      titleLabel.text = video.title
-      descriptionLabel.text = video.videoDescription
-    }
-  }
+  var video: Video!
   
   // TODO:
   // https://github.com/youtube/youtube-ios-player-helper/issues/48
@@ -34,14 +28,18 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
     videoPlayerView.delegate = self
   }
   
+  override func viewWillAppear(animated: Bool) {
+    setupVideoPlayer(withVideoID: video.videoID!)
+    titleLabel.text = video.title
+    descriptionLabel.text = video.videoDescription
+  }
+  
   override func viewDidLayoutSubviews() {
     scrollViewHeightConstraint.constant = titleLabel.sizeThatFits(titleLabel.frame.size).height + descriptionLabel.sizeThatFits(descriptionLabel.frame.size).height + 50
   }
   
   func setupVideoPlayer(withVideoID videoID: String) {
-    let width = NSString(format: "0.00f", view.frame.size.width)
-    let height = NSString(format: "0.00f", videoPlayerView.frame.size.height)
-    let playerVars = ["playsinline": 1, "modestbranding": 1, "width": width, "height": height]
+    let playerVars = ["playsinline": 1, "modestbranding": 1]
     videoPlayerView.loadWithVideoId(videoID, playerVars: playerVars)
   }
   

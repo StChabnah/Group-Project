@@ -74,7 +74,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="RbY-dk-hmv">
             <objects>
-                <viewController id="XhJ-a6-aPe" customClass="VideoDetailViewController" customModule="Pocket_Pantry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XhJ-a6-aPe" customClass="VideoDetailViewController" customModule="Pocket_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UWv-bS-psm"/>
                         <viewControllerLayoutGuide type="bottom" id="yw8-H6-9ad"/>
@@ -93,8 +93,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-EX-tLH">
                                 <rect key="frame" x="0.0" y="294" width="600" height="257"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rh9-Lu-YXS" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="213"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rh9-Lu-YXS" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWj-7j-12c">
                                                 <rect key="frame" x="8" y="8" width="141" height="24"/>
