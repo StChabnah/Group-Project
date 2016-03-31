@@ -63,7 +63,8 @@ class StorageService {
         if let videoFromRealm = retrieveEntity(Video.self, primaryKey: video.id ?? "") {
           video.favorite = videoFromRealm.favorite
         }
-        if !(video.title?.lowercaseString.containsString("private video") ?? false) {
+        if !(video.title?.lowercaseString.containsString("private") ?? false) {
+          print(video)
           realm.add(video, update: true)
         }
       }

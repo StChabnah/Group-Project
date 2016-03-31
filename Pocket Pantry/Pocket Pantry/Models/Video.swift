@@ -54,7 +54,7 @@ class Video: Object {
       title = snippet["title"] as? String
       videoDescription = snippet["description"] as? String
       let formatter = NSDateFormatter()
-      formatter.dateFormat = "yyyy-MM-ddThh:mm:ss.SSSZ" // 2016-03-23T22:30:42.000Z
+      formatter.dateFormat = "yyyy-MM-ddThh:mm:ss.SSSZ" // 2016-03-23T22:30:42.000Z http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
       publishDate = formatter.dateFromString(snippet["publishedAt"] as? String ?? "")
       if let thumbnails = snippet["thumbnails"] as? NSDictionary {
         defaultThumbnailURL  = (thumbnails["default"] as? NSDictionary)?["url"] as? String
@@ -106,6 +106,10 @@ class Video: Object {
       return NSURL(string: defaultThumbnailURL ?? "")
     }
     return nil
+  }
+  
+  func getIngredients() -> [String] {
+    return [""]
   }
   
   // Needed to tell Realm which key to use as the primary key

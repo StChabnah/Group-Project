@@ -31,13 +31,11 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
     
     if controller.searchBar.text == "" {
-        return data?[section].count ?? 0 }
+        return data?[section].videos.count ?? 0 }
     else {
-        return filteredData?[section].count ?? 0 }
-    
+        return filteredData?[section].videos.count ?? 0 }
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
