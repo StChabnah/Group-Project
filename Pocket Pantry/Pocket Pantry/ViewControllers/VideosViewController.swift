@@ -38,6 +38,9 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     dataSource.filterData(text: searchText)
+    
+    
+    
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

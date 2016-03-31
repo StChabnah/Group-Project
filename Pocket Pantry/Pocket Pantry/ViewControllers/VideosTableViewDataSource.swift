@@ -21,20 +21,38 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell
-    cell?.video = data?[indexPath.section].videos[indexPath.row]
-    return cell!
+    if controller.searchBar.text == "" {
+       cell?.video = data?[indexPath.section].videos[indexPath.row]
+        
+    }
+    else {
+        cell?.video = filteredData?[indexPath.section].videos[indexPath.row] }
+        return cell!
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data?[section].count ?? 0
+  
+    
+    if controller.searchBar.text == "" {
+        return data?[section].count ?? 0 }
+    else {
+        return filteredData?[section].count ?? 0 }
+    
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return data?.count ?? 0
-  }
+    if controller.searchBar.text == "" {
+        return data?.count ?? 0
+    } else {
+    return filteredData?.count ?? 0 }
+    }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return data?[section].title
+    if controller.searchBar.text == "" {
+      return data?[section].title
+    } else {
+        return filteredData?[section].title
+    }
   }
   
   func filterData(text text: String) {
@@ -51,6 +69,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
       }
       filteredData?.append(filteredPlaylist)
     }
+    controller.tableView.reloadData()
   }
   
   // MARK: Refreshing
