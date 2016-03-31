@@ -26,7 +26,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data?[section].count ?? 0
+    return data?[section].videos.count ?? 0
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -13,7 +13,6 @@ class Playlist: Object {
   
   dynamic var id: String?
   dynamic var title: String?
-  dynamic var count: Int = 0
   var videos: List<Video> = List<Video>()
   
   convenience init(dict: NSDictionary) {
@@ -24,9 +23,6 @@ class Playlist: Object {
   func setUp(dict dict: NSDictionary) {
     id = dict["id"] as? String
     title = (dict["snippet"] as? NSDictionary)?["title"] as? String
-    if let details = dict["contentDetails"] as? NSDictionary {
-      count = details["itemCount"] as? Int ?? 0
-    }
     if let videoList = (dict["items"] as? NSArray) {
       for item in videoList{
         if let item = (item as? NSDictionary) {
@@ -37,7 +33,10 @@ class Playlist: Object {
   }
   
   func addVideo(dict dict: NSDictionary) {
-    videos.append(Video(dict: dict))
+    let video = Video(dict: dict)
+    if !(video.title?.lowercaseString.containsString("private") ?? false) {
+      videos.append(video)
+    }
   }
   
   // Needed to tell Realm which key to use as the primary key
