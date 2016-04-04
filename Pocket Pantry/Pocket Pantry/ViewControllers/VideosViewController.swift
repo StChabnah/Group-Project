@@ -38,23 +38,7 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     dataSource.filterData(text: searchText)
-    if searchText.isEmpty {
-        dataSource.filteredData = dataSource.data
-    } else {
-        dataSource.filteredData = dataSource.data?.filter({ (data: Playlist) -> Bool in
-            if let title = data["title"] as? String {
-                if title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil {
-                    
-                    return  true
-                } else {
-                    return false
-                }
-            }
-            return false
-        })
-    }
-    tableView.reloadData()
-    }
+    
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
