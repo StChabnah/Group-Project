@@ -16,9 +16,9 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   
   // MARK: - Methods
   
-    func refreshData() {
-        data = StorageService.sharedInstance.retrieveFavoriteVideos()
-    }
+  func refreshData() {
+    data = StorageService.sharedInstance.retrieveFavoriteVideos()
+  }
     
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell 
@@ -27,14 +27,13 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data.count 
+    return data.count
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
-        StorageService.sharedInstance.toggleVideoFavoriteProperty(video: data[indexPath.row])
+      StorageService.sharedInstance.toggleVideoFavoriteProperty(video: data[indexPath.row])
       data.removeAtIndex(indexPath.row)
-    
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
     }
   }

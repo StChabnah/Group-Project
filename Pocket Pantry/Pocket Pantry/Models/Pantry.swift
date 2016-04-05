@@ -24,14 +24,12 @@ class Pantry: Object {
     items.insert(item, atIndex: index)
     StorageService.sharedInstance.saveEntity(item, update: true)
     StorageService.sharedInstance.saveEntity(self, update: true)
-    print("added")
   }
   
   func append(item item: PantryItem) {
     items.append(item)
     StorageService.sharedInstance.saveEntity(item, update: true)
     StorageService.sharedInstance.saveEntity(self, update: true)
-    print("appended")
   }
   
   // MARK: Deleting

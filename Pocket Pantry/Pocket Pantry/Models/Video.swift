@@ -117,6 +117,6 @@ class Video: Object {
   
   // Needed to tell Realm which key to use as the primary key
   override class func primaryKey() -> String {
-    return "id"
+    return "videoID"
   }
 }

@@ -40,11 +40,13 @@ class StorageService {
       if let entities = entities as? [Playlist] {
         try! realm.write {
           for item in entities {
+            for video in item.videos {
+              if let videoFromRealm = StorageService.sharedInstance.retrieveEntity(Video.self, primaryKey: video.videoID ?? "") {
+                video.favorite = videoFromRealm.favorite
+              }
+            }
             realm.add(item, update: update)
           }
-        }
-        for item in entities {
-          saveVideos(item.videos)
         }
       }
       else {
@@ -67,11 +69,13 @@ class StorageService {
   internal func saveVideos(videos: List<Video>) {
     try! realm.write {
       for video in videos {
-        if let videoFromRealm = retrieveEntity(Video.self, primaryKey: video.id ?? "") {
+        if let videoFromRealm = retrieveEntity(Video.self, primaryKey: video.videoID ?? "") {
           video.favorite = videoFromRealm.favorite
         }
-        if !(video.title?.lowercaseString.containsString("private") ?? false) {
-          realm.add(video, update: true)
+        else {
+          if !(video.title?.lowercaseString.containsString("private") ?? false) {
+            realm.add(video, update: true)
+          }
         }
       }
     }
@@ -123,7 +127,7 @@ class StorageService {
   ///  - parameter video: The video to be toggled.
   ///
   func toggleVideoFavoriteProperty(video video: Video) {
-    if let video = StorageService.sharedInstance.retrieveEntity(Video.self, primaryKey: video.id ?? "") {
+    if let video = StorageService.sharedInstance.retrieveEntity(Video.self, primaryKey: video.videoID ?? "") {
       try! realm.write {
         if video.favorite == false {
           video.favorite = true
@@ -132,6 +136,9 @@ class StorageService {
           video.favorite = false
         }
       }
+    }
+    else {
+      print("video not found in realm")
     }
   }
   
