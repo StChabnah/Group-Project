@@ -27,6 +27,12 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
     super.viewDidLoad()
     
     videoPlayerView.delegate = self
+    
+    if video.favorite{
+        saveButton.title = "Unsave"
+    } else{
+    saveButton.title = "Save"
+    }
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -40,6 +46,13 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   }
   
   @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
+    StorageService.sharedInstance.toggleVideoFavoriteProperty(video: video)
+    
+    if video.favorite{
+        saveButton.title = "Unsave"
+    } else{
+        saveButton.title = "Save"
+    }
     
   }
   

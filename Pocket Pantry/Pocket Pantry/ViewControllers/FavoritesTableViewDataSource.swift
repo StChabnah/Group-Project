@@ -12,23 +12,27 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   
   // MARK: - Properties
   
-  var data: [Video]?
+  var data: [Video] = StorageService.sharedInstance.retrieveFavoriteVideos()
   
   // MARK: - Methods
   
+    func refreshData() {
+        data = StorageService.sharedInstance.retrieveFavoriteVideos()
+    }
+    
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell 
-    // TODO: set up the cell
+    cell?.video = data[indexPath.row]
     return cell!
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 20//data?.count ?? 0
+    return data.count 
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
-      data?.removeAtIndex(indexPath.row)
+      data.removeAtIndex(indexPath.row)
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
     }
   }

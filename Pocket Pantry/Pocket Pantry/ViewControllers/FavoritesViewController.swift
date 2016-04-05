@@ -19,6 +19,10 @@ class FavoritesViewController: UIViewController {
   var dataSource: FavoritesTableViewDataSource!
   
   // MARK: - Methods
+    
+    override func viewWillAppear(animated: Bool) {
+        dataSource.refreshData()
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
