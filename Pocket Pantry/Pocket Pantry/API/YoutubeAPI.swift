@@ -75,7 +75,9 @@ class YoutubeAPI {
       }
   }
   
-  ///  Runs a piece of code if the funcRunCount equals the finalCount
+  ///  Runs a piece of code if the funcRunCount equals the finalCount. I am doing
+  ///    this so that Realm does not try to run several `write()` commands at
+  ///    the same time.
   ///
   ///  - parameter funcRunCount: How many times has this method been called so far?
   ///  - parameter finalCount:   On which method call should the code be executed

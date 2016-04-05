@@ -46,6 +46,8 @@ class Video: Object {
   dynamic internal var standardThumbnailURL: String?
   dynamic internal var maxresThumbnailURL: String?
   
+//  dynamic var ingredients: List<String> = List<String>()
+  
   convenience init(dict: NSDictionary) {
     self.init()
     id = dict["id"] as? String

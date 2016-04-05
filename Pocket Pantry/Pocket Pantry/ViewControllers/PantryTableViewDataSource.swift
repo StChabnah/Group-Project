@@ -12,21 +12,19 @@ class PantryTableViewDataSource: NSObject, UITableViewDataSource {
   
   // MARK: - Properties
   
-  let pantry = Pantry()
-//  var pantry = [String]()
-  
+  let pantry = StorageService.sharedInstance.retrieveEntity(Pantry.self, primaryKey: 0) ?? Pantry()
   
   // MARK: - Methods
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("PantryTableViewCell") as? PantryTableViewCell
-    cell?.item = pantry.items?[indexPath.row]
+    cell?.item = pantry.items[indexPath.row]
   
     return cell!
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return pantry.items?.count ?? 0
+    return pantry.items.count ?? 0
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

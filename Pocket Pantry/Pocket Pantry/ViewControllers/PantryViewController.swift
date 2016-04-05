@@ -22,6 +22,10 @@ class PantryViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated);
     self.tableView.reloadData()
+    
+    if let dataSource = dataSource {
+      print(dataSource.pantry)
+    }
   }
   
   override func viewDidLoad() {
@@ -34,6 +38,8 @@ class PantryViewController: UIViewController {
     
     tableView.delegate = delegate
     tableView.dataSource = dataSource
+    
+    print(dataSource.pantry)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

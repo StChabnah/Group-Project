@@ -7,48 +7,47 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Pantry {
+class Pantry: Object {
   
-  static let sharedInstance: Pantry = Pantry()
-  
-  var items: [PantryItem]? {
-    didSet {
-      
-    }
-  }
-  
-  init() {
-    items = [PantryItem]()
-    let toItems = StorageService.sharedInstance.retrieveEntitys(PantryItem.self)
-    for item in toItems {
-      items?.append(item)
-    }
-  }
+  var items: List<PantryItem> = List<PantryItem>()
+  var id: Int = 0
   
   func add(item item: PantryItem, index: Int) {
+    items.insert(item, atIndex: index)
     StorageService.sharedInstance.saveEntity(item, update: true)
-    items?.insert(item, atIndex: index)
+    StorageService.sharedInstance.saveEntity(self, update: true)
+    print("added")
   }
   
   func append(item item: PantryItem) {
+    items.append(item)
     StorageService.sharedInstance.saveEntity(item, update: true)
-    items?.append(item)
+    StorageService.sharedInstance.saveEntity(self, update: true)
+    print("appended")
   }
   
   func deleteAtIndex(index: Int) {
-    if let itemFromRealm = StorageService.sharedInstance.retrieveEntity(PantryItem.self, primaryKey: items?[index].name ?? "") {
+    if let itemFromRealm = StorageService.sharedInstance.retrieveEntity(PantryItem.self, primaryKey: items[index].name ?? "") {
       StorageService.sharedInstance.deleteEntity(itemFromRealm)
     }
-    items?.removeAtIndex(index)
+    items.removeAtIndex(index)
+    StorageService.sharedInstance.saveEntity(self, update: true)
   }
   
   func delete(item item: PantryItem) {
-    for i in 0...(items?.count ?? 0) {
-      if items?[i] == item {
-        items?.removeAtIndex(i)
+    for i in 0...items.count {
+      if items[i] == item {
+        items.removeAtIndex(i)
         break
       }
     }
+    StorageService.sharedInstance.saveEntity(self, update: true)
+  }
+  
+  // Needed to tell Realm which key to use as the primary key
+  override class func primaryKey() -> String {
+    return "id"
   }
 }

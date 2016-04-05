@@ -47,6 +47,13 @@ class StorageService {
           saveVideos(item.videos)
         }
       }
+      else {
+        try! realm.write {
+          for item in entities {
+            realm.add(item)
+          }
+        }
+      }
     }
   }
   
@@ -64,7 +71,6 @@ class StorageService {
           video.favorite = videoFromRealm.favorite
         }
         if !(video.title?.lowercaseString.containsString("private") ?? false) {
-          print(video)
           realm.add(video, update: true)
         }
       }
