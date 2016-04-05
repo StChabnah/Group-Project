@@ -22,6 +22,7 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         dataSource.refreshData()
+        tableView.reloadData()
     }
   
   override func viewDidLoad() {

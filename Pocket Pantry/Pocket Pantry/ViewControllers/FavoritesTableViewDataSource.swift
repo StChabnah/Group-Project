@@ -32,7 +32,9 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
+        StorageService.sharedInstance.toggleVideoFavoriteProperty(video: data[indexPath.row])
       data.removeAtIndex(indexPath.row)
+    
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
     }
   }
