@@ -102,6 +102,11 @@ class StorageService {
     return realm.objects(type)
   }
   
+  ///  Retrieves a list of videos that have been favorited.
+  ///
+  ///  - returns: An array of Videos. If no videos have been favorited yet returns
+  ///             an empty array.
+  ///
   func retrieveFavoriteVideos() -> [Video] {
     var videos = [Video]()
     let retrievedVideos = StorageService.sharedInstance.retrieveEntitys(Video.self)
@@ -111,6 +116,23 @@ class StorageService {
       }
     }
     return videos
+  }
+  
+  ///  Toggles the favorite property of a Video.
+  ///
+  ///  - parameter video: The video to be toggled.
+  ///
+  func toggleVideoFavoriteProperty(video video: Video) {
+    if let video = StorageService.sharedInstance.retrieveEntity(Video.self, primaryKey: video.id ?? "") {
+      try! realm.write {
+        if video.favorite == false {
+          video.favorite = true
+        }
+        else {
+          video.favorite = false
+        }
+      }
+    }
   }
   
   ///  Removes an entity from the database.
