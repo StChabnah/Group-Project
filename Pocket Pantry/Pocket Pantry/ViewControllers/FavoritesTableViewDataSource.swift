@@ -17,7 +17,7 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
   // MARK: - Methods
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell")
+    let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell 
     // TODO: set up the cell
     return cell!
   }
