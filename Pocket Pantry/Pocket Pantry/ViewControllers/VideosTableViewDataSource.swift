@@ -16,7 +16,9 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   
   var data: [Playlist]?
   var filteredData: [Playlist]?
-  
+  var tempData: [Playlist]?
+  var currentIngredientsData: [Playlist]?
+  let pantry = StorageService.sharedInstance.retrieveEntity(Pantry.self, primaryKey: 0) ?? Pantry()
   // MARK: - Methods
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -71,12 +73,25 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     controller.tableView.reloadData()
   }
   
+    func filterCurrentRecipeData(){
+        for items in pantry.items {
+            for playlist in tempData!{
+                for (index, video) in playlist.videos.enumerate(){
+                    if video.videoDescription?.containsString(items.name!) ?? false{
+                        currentIngredientsData?.append(playlist)
+                        tempData?.removeAtIndex(index)
+                    }
+                }
+            }
+        }
+    }
   // MARK: Refreshing
   
   func refreshData() {
     self.data = YoutubeAPI.sharedInstance.getPlaylists()
     YoutubeAPI.sharedInstance.refreshData { (playlists) in
       self.data = playlists
+      self.tempData = playlists
       self.controller.tableView.reloadData()
     }
   }

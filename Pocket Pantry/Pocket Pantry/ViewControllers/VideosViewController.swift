@@ -16,6 +16,8 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   @IBOutlet var searchBar: UISearchBar!
   @IBOutlet var filterSegmentedControl: UISegmentedControl!
   
+    
+  
   var delegate: VideosTableViewDelegate!
   var dataSource: VideosTableViewDataSource!
   
