@@ -14,6 +14,7 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   // MARK: Outlet
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet var searchBar: UISearchBar!
+  @IBOutlet var filterSegmentedControl: UISegmentedControl!
   
   var delegate: VideosTableViewDelegate!
   var dataSource: VideosTableViewDataSource!
@@ -38,9 +39,17 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     dataSource.filterData(text: searchText)
-    
   }
 
+  @IBAction func filterSegmentedControlChanged(sender: AnyObject) {
+    if filterSegmentedControl.selectedSegmentIndex == 0 {
+      // show all videos
+    }
+    else {
+      // show filter videos
+    }
+  }
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "VideoDetailViewController" {
       let vc = segue.destinationViewController as! VideoDetailViewController
