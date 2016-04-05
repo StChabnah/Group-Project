@@ -71,7 +71,8 @@ class Video: Object {
   ///  Returns either the URL of the thumbnail size provided, or the URL of the 
   ///    next smallest thumbnail that is avalible.
   ///
-  ///  - parameter size: The size of the thumbnail desired
+  ///  - parameter thumbnailSize: The size of the thumbnail desired, expressed
+  ///                             with a ThumbnailQuality value.
   ///
   ///  - returns: An NSURL? of the thumbnail desired, or the next smallest not nil
   ///               thumbnail URL

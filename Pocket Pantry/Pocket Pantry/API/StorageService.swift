@@ -102,6 +102,17 @@ class StorageService {
     return realm.objects(type)
   }
   
+  func retrieveFavoriteVideos() -> [Video] {
+    var videos = [Video]()
+    let retrievedVideos = StorageService.sharedInstance.retrieveEntitys(Video.self)
+    for video in retrievedVideos {
+      if video.favorite {
+        videos.append(video)
+      }
+    }
+    return videos
+  }
+  
   ///  Removes an entity from the database.
   ///
   ///  - parameter entity: The object to be deleted.

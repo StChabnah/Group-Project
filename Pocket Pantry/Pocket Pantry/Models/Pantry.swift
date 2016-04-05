@@ -11,8 +11,14 @@ import RealmSwift
 
 class Pantry: Object {
   
+  // MARK: - Properties
+  
   var items: List<PantryItem> = List<PantryItem>()
   var id: Int = 0
+  
+  // MARK: - Methods
+  
+  // MARK: Adding
   
   func add(item item: PantryItem, index: Int) {
     items.insert(item, atIndex: index)
@@ -27,6 +33,8 @@ class Pantry: Object {
     StorageService.sharedInstance.saveEntity(self, update: true)
     print("appended")
   }
+  
+  // MARK: Deleting
   
   func deleteAtIndex(index: Int) {
     if let itemFromRealm = StorageService.sharedInstance.retrieveEntity(PantryItem.self, primaryKey: items[index].name ?? "") {
@@ -45,6 +53,8 @@ class Pantry: Object {
     }
     StorageService.sharedInstance.saveEntity(self, update: true)
   }
+  
+  // MARK: Realm Stuff
   
   // Needed to tell Realm which key to use as the primary key
   override class func primaryKey() -> String {
