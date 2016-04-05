@@ -15,6 +15,7 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   @IBOutlet var descriptionLabel: UILabel!
   @IBOutlet var containerView: UIView!
   @IBOutlet var scrollViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet var saveButton: UIBarButtonItem!
   
   var video: Video!
   
@@ -36,6 +37,10 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
   
   override func viewDidLayoutSubviews() {
     scrollViewHeightConstraint.constant = titleLabel.sizeThatFits(titleLabel.frame.size).height + descriptionLabel.sizeThatFits(descriptionLabel.frame.size).height + 50
+  }
+  
+  @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
+    
   }
   
   func setupVideoPlayer(withVideoID videoID: String) {

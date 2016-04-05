@@ -54,9 +54,10 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func filterData(text text: String) {
+    filteredData = [Playlist]()
     for playlist in data! {
       let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
-        if ((video.title?.containsString(text)) != nil) {
+        if (video.title?.containsString(text) ?? false) {
           return true
         }
         return false
