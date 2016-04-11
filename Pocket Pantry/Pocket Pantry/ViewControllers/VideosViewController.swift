@@ -37,6 +37,8 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
     
     dataSource.refreshData()
     searchBar.delegate = self
+    
+    _ = self.view
   }
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -44,15 +46,15 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
   }
 
   @IBAction func filterSegmentedControlChanged(sender: AnyObject) {
+    
     if filterSegmentedControl.selectedSegmentIndex == 0 {
         //show all videos
-        print("0")
+        tableView.reloadData() 
     }
     else {
-        print("1")
-        dataSource.filterCurrentRecipeData()
-        
       // show filter videos
+        dataSource.filterCurrentRecipeData()
+        tableView.reloadData()
     }
   }
   

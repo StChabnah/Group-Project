@@ -23,12 +23,22 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell") as? VideoTableViewCell
-    if controller.searchBar.text == "" {
-       cell?.video = data?[indexPath.section].videos[indexPath.row]
-        
+    if controller.filterSegmentedControl.selectedSegmentIndex == 0{
+        if controller.searchBar.text == "" {
+            cell?.video = data?[indexPath.section].videos[indexPath.row]
+        }
+        else {
+            cell?.video = filteredData?[indexPath.section].videos[indexPath.row]
+        }
     }
     else {
-        cell?.video = filteredData?[indexPath.section].videos[indexPath.row] }
+        if controller.searchBar.text == "" {
+            cell?.video = currentIngredientsData?[indexPath.section].videos[indexPath.row]
+        }
+        else {
+            cell?.video = filteredData?[indexPath.section].videos[indexPath.row]
+        }
+    }
         return cell!
   }
   
@@ -38,7 +48,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
         if controller.searchBar.text == "" {
             return data?[section].videos.count ?? 0 }
         else {
-            return filteredData?[section].videos.count ?? 0 }
+            return filteredData?[section].videos.count ?? 0 }	
     }
     else{
         if controller.searchBar.text == "" {
@@ -51,17 +61,40 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    if controller.searchBar.text == "" {
-        return data?.count ?? 0
-    } else {
-    return filteredData?.count ?? 0 }
+    if controller.filterSegmentedControl.selectedSegmentIndex == 0{
+        if controller.searchBar.text == "" {
+            return data?.count ?? 0
+        }
+        
+        else {
+            return filteredData?.count ?? 0
+        }
     }
+    else {
+        if controller.searchBar.text == "" {
+            return currentIngredientsData?.count ?? 0
+        }
+        else{
+            return filteredData?.count ?? 0
+        }
+    }
+}
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if controller.searchBar.text == "" {
-      return data?[section].title
-    } else {
-        return filteredData?[section].title
+    if controller.filterSegmentedControl.selectedSegmentIndex == 0{
+        if controller.searchBar.text == "" {
+            return data?[section].title
+        } else {
+            return filteredData?[section].title
+        }
+    }
+    else{
+        if controller.searchBar.text == ""{
+            return currentIngredientsData?[section].title
+        }
+        else{
+            return filteredData?[section].title
+        }
     }
   }
   
@@ -102,21 +135,24 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
     func filterCurrentRecipeData(){
+        currentIngredientsData = [Playlist]()
         for items in pantry.items {
             for playlist in tempData!{
                 for (index, video) in playlist.videos.enumerate(){
                     if video.videoDescription?.containsString(items.name!) ?? false{
                         currentIngredientsData?.append(playlist)
-                        tempData?.removeAtIndex(index)
+                        //tempData?.removeAtIndex(index)
                     }
                 }
             }
         }
+        controller.tableView.reloadData()
     }
   // MARK: Refreshing
   
   func refreshData() {
     self.data = YoutubeAPI.sharedInstance.getPlaylists()
+    self.tempData = YoutubeAPI.sharedInstance.getPlaylists()
     YoutubeAPI.sharedInstance.refreshData { (playlists) in
       self.data = playlists
       self.tempData = playlists

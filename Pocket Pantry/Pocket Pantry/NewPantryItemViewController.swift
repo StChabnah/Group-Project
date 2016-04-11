@@ -27,6 +27,7 @@ class NewPantryItemViewController: UIViewController {
   @IBAction func navPop(sender: AnyObject) {
     if textField.text != "" {
       pantryTableView.dataSource.pantry.append(item: PantryItem(name: textField.text))
+        
     }
     navigationController?.popViewControllerAnimated(true)
   }
