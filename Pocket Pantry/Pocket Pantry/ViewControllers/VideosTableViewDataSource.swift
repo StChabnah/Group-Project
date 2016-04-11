@@ -33,11 +33,21 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-    if controller.searchBar.text == "" {
-        return data?[section].videos.count ?? 0 }
-    else {
-        return filteredData?[section].videos.count ?? 0 }
+    if controller.filterSegmentedControl.selectedSegmentIndex == 0{
+        
+        if controller.searchBar.text == "" {
+            return data?[section].videos.count ?? 0 }
+        else {
+            return filteredData?[section].videos.count ?? 0 }
+    }
+    else{
+        if controller.searchBar.text == "" {
+            return currentIngredientsData?[section].videos.count ?? 0
+        }
+        else{
+            return filteredData?[section].videos.count ?? 0
+        }
+    }
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,18 +67,36 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   
   func filterData(text text: String) {
     filteredData = [Playlist]()
-    for playlist in data! {
-      let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
-        if (video.title?.containsString(text) ?? false) {
-          return true
+    if controller.filterSegmentedControl.selectedSegmentIndex == 0{
+     
+        for playlist in data! {
+            let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
+                if (video.title?.containsString(text) ?? false) {
+                    return true
+                }
+                return false
+            })
+            let filteredPlaylist = Playlist()
+            for video in filteredVideos {
+                filteredPlaylist.videos.append(video)
+            }
+            filteredData?.append(filteredPlaylist)
         }
-        return false
-      })
-      let filteredPlaylist = Playlist()
-      for video in filteredVideos {
-        filteredPlaylist.videos.append(video)
-      }
-      filteredData?.append(filteredPlaylist)
+    }
+    else{
+        for playlist in currentIngredientsData! {
+            let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
+                if (video.title?.containsString(text) ?? false) {
+                    return true
+                }
+                return false
+            })
+            let filteredPlaylist = Playlist()
+            for video in filteredVideos {
+                filteredPlaylist.videos.append(video)
+            }
+            filteredData?.append(filteredPlaylist)
+        }
     }
     controller.tableView.reloadData()
   }

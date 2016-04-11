@@ -45,9 +45,13 @@ class VideosViewController: UIViewController, UISearchBarDelegate {
 
   @IBAction func filterSegmentedControlChanged(sender: AnyObject) {
     if filterSegmentedControl.selectedSegmentIndex == 0 {
-      // show all videos
+        //show all videos
+        print("0")
     }
     else {
+        print("1")
+        dataSource.filterCurrentRecipeData()
+        
       // show filter videos
     }
   }
