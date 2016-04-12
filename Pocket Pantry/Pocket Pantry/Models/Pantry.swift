@@ -21,35 +21,21 @@ class Pantry: Object {
   // MARK: Adding
   
   func add(item item: PantryItem, index: Int) {
-    items.insert(item, atIndex: index)
-    StorageService.sharedInstance.saveEntity(item, update: true)
-    StorageService.sharedInstance.saveEntity(self, update: true)
+    StorageService.sharedInstance.addItemToPantry(pantry: self, item: item, index: index)
   }
   
   func append(item item: PantryItem) {
-    items.append(item)
-    StorageService.sharedInstance.saveEntity(item, update: true)
-    StorageService.sharedInstance.saveEntity(self, update: true)
+    StorageService.sharedInstance.appendItemToPantry(pantry: self, item: item)
   }
   
   // MARK: Deleting
   
   func deleteAtIndex(index: Int) {
-    if let itemFromRealm = StorageService.sharedInstance.retrieveEntity(PantryItem.self, primaryKey: items[index].name ?? "") {
-      StorageService.sharedInstance.deleteEntity(itemFromRealm)
-    }
-    items.removeAtIndex(index)
-    StorageService.sharedInstance.saveEntity(self, update: true)
+    StorageService.sharedInstance.deleteFromPantryAtIndex(pantry: self, index: index)
   }
   
   func delete(item item: PantryItem) {
-    for i in 0...items.count {
-      if items[i] == item {
-        items.removeAtIndex(i)
-        break
-      }
-    }
-    StorageService.sharedInstance.saveEntity(self, update: true)
+    StorageService.sharedInstance.deleteItemFromPantry(pantry: self, item: item)
   }
   
   // MARK: Realm Stuff

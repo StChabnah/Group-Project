@@ -52,7 +52,7 @@ class StorageService {
       else {
         try! realm.write {
           for item in entities {
-            realm.add(item)
+            realm.add(item, update: update)
           }
         }
       }
@@ -155,7 +155,92 @@ class StorageService {
       }
     }
     catch {
-      print("Unable to delete \(entity)")
+      print("Unable to delete \(entity) ¯\\_(ツ)_/¯")
+    }
+  }
+  
+  // MARK: - Pantry
+  
+  func appendItemToPantry(pantry pantry: Pantry, item: PantryItem) {
+    for each in pantry.items {
+      if item.name == each.name {
+        return
+      }
+    }
+    if let pantry = retrieveEntity(Pantry.self, primaryKey: pantry.id) {
+      try! realm.write {
+        if let itemFromRealm = retrieveEntity(PantryItem.self, primaryKey: item.name ?? "") {
+          pantry.items.append(itemFromRealm)
+        }
+        else {
+          pantry.items.append(item)
+        }
+      }
+      saveEntity(item, update: true)
+      saveEntity(pantry, update: true)
+    }
+    else {
+      pantry.items.append(item)
+      saveEntity(item, update: true)
+      saveEntity(pantry, update: true)
+    }
+  }
+  
+  func addItemToPantry(pantry pantry: Pantry, item: PantryItem, index: Int) {
+    for each in pantry.items {
+      if item.name == each.name {
+        return
+      }
+    }
+    if let pantry = retrieveEntity(Pantry.self, primaryKey: pantry.id) {
+      try! realm.write {
+        pantry.items.insert(item, atIndex: index)
+      }
+      saveEntity(item, update: true)
+      saveEntity(pantry, update: true)
+    }
+    else {
+      pantry.items.insert(item, atIndex: index)
+      saveEntity(item, update: true)
+      saveEntity(pantry, update: true)
+    }
+  }
+  
+  func deleteFromPantryAtIndex(pantry pantry: Pantry, index: Int) {
+    if let pantry = retrieveEntity(Pantry.self, primaryKey: pantry.id) {
+      let tempItem = pantry.items[index]
+      try! realm.write {
+        pantry.items.removeAtIndex(index)
+      }
+      deleteEntity(tempItem)
+      saveEntity(pantry, update: true)
+    }
+    else {
+      pantry.items.removeAtIndex(index)
+      saveEntity(pantry, update: true)
+    }
+  }
+  
+  func deleteItemFromPantry(pantry pantry: Pantry, item: PantryItem) {
+    if let pantry = retrieveEntity(Pantry.self, primaryKey: pantry.id) {
+      for i in 0...pantry.items.count {
+        if pantry.items[i].name == item.name {
+          let tempItem = pantry.items[i]
+          try! realm.write {
+            pantry.items.removeAtIndex(i)
+          }
+          deleteEntity(tempItem)
+          break
+        }
+      }
+    }
+    else {
+      for i in 0...pantry.items.count {
+        if pantry.items[i].name == item.name {
+          pantry.items.removeAtIndex(i)
+          break
+        }
+      }
     }
   }
 }
