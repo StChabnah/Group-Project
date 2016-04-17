@@ -17,7 +17,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   var data: [Playlist]?
   var filteredData: [Playlist]?
   var tempData: [Playlist]?
-  var currentIngredientsData: [Playlist]?
+    var currentIngredientsVideos: [Video]?
   let pantry = StorageService.sharedInstance.retrieveEntity(Pantry.self, primaryKey: 0) ?? Pantry()
   // MARK: - Methods
   
@@ -33,7 +33,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     }
     else {
         if controller.searchBar.text == "" {
-            cell?.video = currentIngredientsData?[indexPath.section].videos[indexPath.row]
+            cell?.video = currentIngredientsVideos![indexPath.row]
         }
         else {
             cell?.video = filteredData?[indexPath.section].videos[indexPath.row]
@@ -52,7 +52,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     }
     else{
         if controller.searchBar.text == "" {
-            return currentIngredientsData?[section].videos.count ?? 0
+            return currentIngredientsVideos!.count ?? 0
         }
         else{
             return filteredData?[section].videos.count ?? 0
@@ -72,7 +72,12 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     }
     else {
         if controller.searchBar.text == "" {
-            return currentIngredientsData?.count ?? 0
+            if currentIngredientsVideos!.count != 0{
+                return 1
+            }
+            else{
+                return 0
+            }
         }
         else{
             return filteredData?.count ?? 0
@@ -90,7 +95,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     }
     else{
         if controller.searchBar.text == ""{
-            return currentIngredientsData?[section].title
+            return "Ingredients I Have"
         }
         else{
             return filteredData?[section].title
@@ -117,8 +122,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
         }
     }
     else{
-        for playlist in currentIngredientsData! {
-            let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
+        let filteredVideos = currentIngredientsVideos!.filter({ (video: Video) -> Bool in
                 if (video.title?.containsString(text) ?? false) {
                     return true
                 }
@@ -130,18 +134,18 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
             }
             filteredData?.append(filteredPlaylist)
         }
-    }
     controller.tableView.reloadData()
   }
-  
+
     func filterCurrentRecipeData(){
-        currentIngredientsData = [Playlist]()
-        for items in pantry.items {
+        currentIngredientsVideos = [Video]()
+        for item in pantry.items {
             for playlist in tempData!{
                 for (index, video) in playlist.videos.enumerate(){
-                    if video.videoDescription?.containsString(items.name!) ?? false{
-                        currentIngredientsData?.append(playlist)
-                        //tempData?.removeAtIndex(index)
+                    if video.videoDescription!.containsString(item.name!) ?? false{
+                        print(video.title!, item.name!)
+                        currentIngredientsVideos!.append(video)
+                        //tempData!.removeAtIndex(index)
                     }
                 }
             }
