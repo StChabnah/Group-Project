@@ -140,12 +140,12 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     func filterCurrentRecipeData(){
         currentIngredientsVideos = [Video]()
         for item in pantry.items {
-            for playlist in tempData!{
+            for (pIndex, playlist) in tempData!.enumerate(){
                 for (index, video) in playlist.videos.enumerate(){
                     if video.videoDescription!.containsString(item.name!) ?? false{
                         print(video.title!, item.name!)
                         currentIngredientsVideos!.append(video)
-                        //tempData!.removeAtIndex(index)
+                        tempData![pIndex].videos.removeAtIndex(index)
                     }
                 }
             }
