@@ -11,9 +11,9 @@ The following **required** functionality is completed:
 - [x] Import recipe videos from YouTube
 - [x] User can add ingredients to their “Pantry”
 - [x] User can delete ingredients from their “Pantry”
-- [ ] Parse recipe description into keywords that match ingredients that the User has added to their “Pantry”
-- [ ] User can favorite videos that are saved to a special tab in the user interface
-- [ ] Option to display all videos or only videos that are avalible based on ingredients in the User’s “Pantry”
+- [x] Parse recipe description into keywords that match ingredients that the User has added to their “Pantry”
+- [x] User can favorite videos that are saved to a special tab in the user interface
+- [x] Option to display all videos or only videos that are avalible based on ingredients in the User’s “Pantry”
 
 The following **optional** features are implemented:
 
