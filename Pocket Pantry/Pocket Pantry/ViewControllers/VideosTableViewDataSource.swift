@@ -17,7 +17,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
   var data: [Playlist]?
   var filteredData: [Playlist]?
   var tempData: [Playlist]?
-    var currentIngredientsVideos: [Video]?
+  var currentIngredientsVideos: [Video]?
   let pantry = StorageService.sharedInstance.retrieveEntity(Pantry.self, primaryKey: 0) ?? Pantry()
   // MARK: - Methods
   
@@ -109,7 +109,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
      
         for playlist in data! {
             let filteredVideos = playlist.videos.filter({ (video: Video) -> Bool in
-                if (video.title?.containsString(text) ?? false) {
+                if (video.title?.lowercaseString.containsString(text.lowercaseString) ?? false) {
                     return true
                 }
                 return false
@@ -123,7 +123,7 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     }
     else{
         let filteredVideos = currentIngredientsVideos!.filter({ (video: Video) -> Bool in
-                if (video.title?.containsString(text) ?? false) {
+                if (video.title?.lowercaseString.containsString(text.lowercaseString) ?? false) {
                     return true
                 }
                 return false
@@ -137,21 +137,22 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     controller.tableView.reloadData()
   }
 
-    func filterCurrentRecipeData(){
-        currentIngredientsVideos = [Video]()
-        for item in pantry.items {
-            for (pIndex, playlist) in tempData!.enumerate(){
-                for (index, video) in playlist.videos.enumerate(){
-                    if video.videoDescription!.containsString(item.name!) ?? false{
-                        print(video.title!, item.name!)
-                        currentIngredientsVideos!.append(video)
-                        tempData![pIndex].videos.removeAtIndex(index)
-                    }
-                }
-            }
+  func filterCurrentRecipeData(){
+    currentIngredientsVideos = [Video]()
+    for item in pantry.items {
+      for (pIndex, playlist) in tempData!.enumerate(){
+        for (index, video) in playlist.videos.enumerate(){
+          if video.videoDescription!.lowercaseString.containsString(item.name!.lowercaseString) ?? false {
+            print(video.title!, item.name!)
+            currentIngredientsVideos!.append(video)
+            tempData![pIndex].delete(video: video)
+          }
         }
-        controller.tableView.reloadData()
+      }
     }
+    controller.tableView.reloadData()
+  }
+  
   // MARK: Refreshing
   
   func refreshData() {
@@ -159,7 +160,14 @@ class VideosTableViewDataSource: NSObject, UITableViewDataSource {
     self.tempData = YoutubeAPI.sharedInstance.getPlaylists()
     YoutubeAPI.sharedInstance.refreshData { (playlists) in
       self.data = playlists
-      self.tempData = playlists
+      self.tempData = [Playlist]()
+      for each in playlists {
+        self.tempData?.append(Playlist())
+        self.tempData?.last?.title = each.title
+        for video in each.videos {
+          self.tempData?.last?.videos.append(video)
+        }
+      }
       self.controller.tableView.reloadData()
     }
   }

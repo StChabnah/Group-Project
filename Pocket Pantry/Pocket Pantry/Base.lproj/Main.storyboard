@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zk1-gz-g2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zk1-gz-g2u">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="uvw-Gr-4dV">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="z59-Bo-LsE">
-                            <rect key="frame" x="176" y="6" width="249" height="32"/>
+                            <rect key="frame" x="175.5" y="6" width="249" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All Recipes"/>
@@ -265,7 +265,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUo-0M-C6b" id="4h8-9e-qUS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -371,11 +371,11 @@
             </objects>
             <point key="canvasLocation" x="445" y="474"/>
         </scene>
-        <!--Item-->
+        <!--Videos-->
         <scene sceneID="n1l-YW-SRJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="paG-id-lK1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sFG-yu-TNp"/>
+                    <tabBarItem key="tabBarItem" title="Videos" id="sFG-yu-TNp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4cf-Rj-cfZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -391,11 +391,11 @@
             </objects>
             <point key="canvasLocation" x="1252" y="241"/>
         </scene>
-        <!--Item-->
+        <!--Pantry-->
         <scene sceneID="aGn-GF-IF5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P8t-9z-54z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="B94-o9-sn2"/>
+                    <tabBarItem key="tabBarItem" title="Pantry" id="B94-o9-sn2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="Zhj-4U-yfV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -411,11 +411,11 @@
             </objects>
             <point key="canvasLocation" x="1252" y="965"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="bHz-14-lPG">
             <objects>
                 <navigationController id="PED-AE-LJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WAd-Hs-pdn"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="WAd-Hs-pdn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mVg-o3-hmj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -39,6 +39,17 @@ class Playlist: Object {
     }
   }
   
+  func delete(video video: Video) {
+    var i = 0
+    for each in videos {
+      if each.id == video.id {
+        videos.removeAtIndex(i)
+        break
+      }
+      i += 1
+    }
+  }
+  
   // Needed to tell Realm which key to use as the primary key
   override class func primaryKey() -> String {
     return "id"
