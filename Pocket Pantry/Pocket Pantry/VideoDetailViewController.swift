@@ -30,7 +30,7 @@ class VideoDetailViewController: UIViewController, YTPlayerViewDelegate {
     
     if video.favorite{
         saveButton.title = "Unsave"
-    } else{
+    } else {
     saveButton.title = "Save"
     }
   }

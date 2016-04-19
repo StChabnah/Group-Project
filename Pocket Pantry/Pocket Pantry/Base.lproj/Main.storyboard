@@ -183,7 +183,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="to2-ch-9RK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QOA-Wt-my7">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="QOA-Wt-my7">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="XhJ-a6-aPe" id="dJB-1u-VO1"/>
                             </connections>
@@ -229,7 +229,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Yjw-FJ-YuY">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="cmF-VS-GZ3">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="cmF-VS-GZ3">
                             <connections>
                                 <action selector="navPop:" destination="i0z-sx-A65" id="fxm-Ah-OTf"/>
                             </connections>
